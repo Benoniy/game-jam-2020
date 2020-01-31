@@ -8,7 +8,6 @@ public abstract class GameObject {
     double radius;
     boolean dead;
     boolean god = false;
-    double godTime;
 
 
 
