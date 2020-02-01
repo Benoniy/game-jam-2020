@@ -20,11 +20,16 @@ public class Game {
         ctrl = new Keys();
         CONTROL = new controlBlock(ctrl);
         objects.add(CONTROL);
-        objects.add(new WallObject(1,1));
+        //objects.add(new WallObject(1,1));
+        try {
+            objects = readMap(objects);
+        } catch (IOException e) {
+            System.out.println("Couldn't find map image.");
+        }
         objects.add(new Player());
     }
 
-    public ArrayList readMap(ArrayList objects) throws IOException {
+    public ArrayList readMap(List objects) throws IOException {
 
         // Opens PNG file, reads pixel by pixel
         BufferedImage mapImage = null;
@@ -63,7 +68,7 @@ public class Game {
                 }
             }
         }
-
+    return (ArrayList) objects;
     }
 
     public static void main(String[] args) {
