@@ -182,11 +182,6 @@ public class Game {
                     objects.add(new FloorObject(x - cbX, y - cbY));
                     objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorend, 270));
                 }
-                else if (pixelArray[x][y] == -16759452) {
-                    // Broken Door
-                    objects.add(new FloorObject(x - cbX, y - cbY));
-                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorbroke, 0));
-                }
                 else {
                     // Else add floor
                     objects.add(new FloorObject(x - cbX, y - cbY));

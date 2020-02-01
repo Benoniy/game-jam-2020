@@ -4,7 +4,7 @@ import java.awt.geom.AffineTransform;
 
 public class DoorObject extends EnviroObject {
     public DoorObject(int posX, int posY, Image sprite, int theta) {
-        super(posX, posY, Constants.blockRadius, false, sprite, theta);
+        super(posX, posY, Constants.blockRadius, true, sprite, theta);
         System.out.println(position);
     }
     @Override
