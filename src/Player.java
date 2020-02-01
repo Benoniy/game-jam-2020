@@ -21,14 +21,6 @@ public class Player extends GameObject {
         g.fillOval((int)position.x, (int)position.y, Constants.blockRadius * 2, Constants.blockRadius * 2);
         g.setColor(Color.BLACK);
         g.drawOval((int)position.x, (int)position.y, Constants.blockRadius * 2, Constants.blockRadius * 2);
-
-        g.setColor(Color.YELLOW);
-        g.fillRect((int)(position.x - radius), (int)position.y, 5, 5);
-        g.fillRect((int)(position.x + radius), (int)position.y, 5, 5);
-        g.fillRect((int)position.x, (int)(position.y - radius), 5, 5);
-        g.fillRect((int)position.x, (int)(position.y + radius), 5, 5);
-
-
     }
 
     public void collisionHandling(GameObject other){
