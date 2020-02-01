@@ -5,9 +5,12 @@ import java.util.List;
 
 public class Game {
     public List<GameObject> objects;
+    public controlBlock CONTROL = new controlBlock();
+
     Game(){
         objects = new ArrayList<>();
-        objects.add(new EnviroObject(0,0, 16, false));
+        objects.add(CONTROL);
+        objects.add(new WallObject(1,1));
     }
 
     public static void main(String[] args) {
