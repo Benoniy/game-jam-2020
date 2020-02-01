@@ -68,7 +68,7 @@ public class Game {
                 }
                 else if (pixelArray[x][y] == -65536) {
                     //  Control Block
-                    objects.add(new WallObject(x - cbX, y -cbY, Sprites.Wall1, 0));
+                    // objects.add(new WallObject(x - cbX, y -cbY, Sprites.Wall1, 0));
                 }
                 else if (pixelArray[x][y] == -16776961) {
                     // Arm
