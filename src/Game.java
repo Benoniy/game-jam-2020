@@ -189,9 +189,9 @@ public class Game {
     }
 
     public void update(){
-        if (pause.equals("mm")){
+        /*if (pause.equals("mm")){
             genMainMenu();
-        }
+        }*/
 
         int skipAmount = 0;
         int counter = 0;
