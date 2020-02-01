@@ -9,18 +9,18 @@ public abstract class GameObject {
     double radius;
     boolean dead;
     boolean god = false;
-    boolean collisions;
+    boolean collision = false;
 
 
 
-    public GameObject(Vector2D position, Vector2D velocity, double radius, boolean colidable){
+    public GameObject(Vector2D position, Vector2D velocity, double radius, boolean collision){
         this.position = position;
         this.velocity = velocity;
         this.radius = radius;
         this.dead = false;
         this.sizeX = Constants.blockSize;
         this.sizeY = Constants.blockSize;
-        this.collisions = false;
+        this.collision = collision;
     }
 
     public void hit(){

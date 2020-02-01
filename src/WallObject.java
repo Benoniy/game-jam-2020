@@ -22,6 +22,12 @@ public class WallObject extends EnviroObject {
         g.drawImage(texture, this.spriteAffine, null);
 
         g.setTransform(at);
+
+        g.setColor(Color.GREEN);
+        g.fillRect((int)(position.x - radius), (int)position.y, 5, 5);
+        g.fillRect((int)(position.x + radius), (int)position.y, 5, 5);
+        g.fillRect((int)position.x, (int)(position.y - radius), 5, 5);
+        g.fillRect((int)position.x, (int)(position.y + radius), 5, 5);
     }
 
 }
