@@ -55,7 +55,8 @@ public class Game {
         for (int x = 0; x < pixelArray.length; x++) {
             for (int y = 0; y < pixelArray[x].length; y++) {
                 if (pixelArray[x][y] != -1 && pixelArray[x][y] != -16777216 && pixelArray[x][y] != -16765620 && pixelArray[x][y] != -12961222 &&
-                        pixelArray[x][y] != -3859094 && pixelArray[x][y] != -10446270 && pixelArray[x][y] != -5347032 && pixelArray[x][y] != -7947291) {
+                        pixelArray[x][y] != -3859094 && pixelArray[x][y] != -10446270 && pixelArray[x][y] != -5347032 && pixelArray[x][y] != -7947291 &&
+                pixelArray[x][y] != -6282368) {
                     System.out.println("Original Coord: (" + x + ", " + y + ") translated: (" + (x -cbX) + ", " + (y - cbY) + ") Color: " + pixelArray[x][y]);
                 }
                 if (pixelArray[x][y] == -16777216) {
@@ -65,6 +66,10 @@ public class Game {
                 else if (pixelArray[x][y] == -12961222) {
                     // Vertical Wall
                     objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallMid, 0));
+                }
+                else if (pixelArray[x][y] == -6282368) {
+                    // Boxes
+                    objects.add(new CrateObject(x - cbX, y - cbY));
                 }
                 else if (pixelArray[x][y] == -65536) {
                     //  Control Block
