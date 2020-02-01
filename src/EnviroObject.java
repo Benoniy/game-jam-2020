@@ -19,4 +19,9 @@ public abstract class EnviroObject extends GameObject {
         g.setColor(Color.black);
         g.fillRect((int) position.x, (int)position.y, sizeX, sizeY);
     }
+
+    @Override
+    public void update(){
+
+    }
 }

@@ -52,10 +52,7 @@ public abstract class GameObject {
         }
     }
 
-    public void update(){
-        position.addScaled(velocity, Constants.DT);
-        position.wrap(Constants.width, Constants.height);
-    }
+    public abstract void update();
 
     public boolean canHit(GameObject other){return true;};
 

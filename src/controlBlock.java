@@ -16,4 +16,9 @@ public class controlBlock extends GameObject {
         g.setColor(Color.black);
         g.drawRect((int) position.x, (int)position.y, sizeX, sizeY);
     }
+
+    @Override
+    public void update() {
+
+    }
 }
