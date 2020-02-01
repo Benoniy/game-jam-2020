@@ -18,16 +18,16 @@ public class Keys extends KeyAdapter implements Controller {
         int key = e.getKeyCode();
         switch (key) {
             case KeyEvent.VK_UP:
-                action.Ymov = 1;
+                if (action.downAllowed){action.down = true;}
                 break;
             case KeyEvent.VK_LEFT:
-                action.Xmov = 1;
+                if (action.rightAllowed){action.right = true;}
                 break;
             case KeyEvent.VK_RIGHT:
-                action.Xmov = -1;
+                if (action.leftAllowed){action.left = true;}
                 break;
             case KeyEvent.VK_DOWN:
-                action.Ymov = -1;
+                if (action.upAllowed){action.up = true;}
                 break;
 
         }
@@ -38,16 +38,16 @@ public class Keys extends KeyAdapter implements Controller {
         int key = e.getKeyCode();
         switch (key) {
             case KeyEvent.VK_UP:
-                action.Ymov = 0;
-                break;
-            case KeyEvent.VK_DOWN:
-                action.Ymov = 0;
+                action.down = false;
                 break;
             case KeyEvent.VK_LEFT:
-                action.Xmov = 0;
+                action.right = false;
                 break;
             case KeyEvent.VK_RIGHT:
-                action.Xmov = 0;
+                action.left = false;
+                break;
+            case KeyEvent.VK_DOWN:
+                action.up = false;
                 break;
 
         }

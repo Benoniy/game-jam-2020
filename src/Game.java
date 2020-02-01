@@ -14,6 +14,7 @@ public class Game {
     public List<GameObject> objects;
     public Keys ctrl;
     public controlBlock CONTROL;
+    public Player player;
 
     Game(){
         objects = new ArrayList<>();
@@ -26,7 +27,8 @@ public class Game {
         } catch (IOException e) {
             System.out.println("Couldn't find map image.");
         }
-        objects.add(new Player());
+        player = new Player(CONTROL);
+        objects.add(player);
     }
 
     public ArrayList readMap(List objects) throws IOException {
@@ -93,9 +95,16 @@ public class Game {
     }
 
     public void update(){
-        for (GameObject o : objects){
+        int skipAmount = 0;
+        int counter = 0;
+        for (GameObject o : objects) {
+            if (o.getClass() != Player.class){
+                player.collisionHandling(o);
+            }
+
+
+            //Single object checks
             o.update();
         }
     }
-
 }

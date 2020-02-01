@@ -9,16 +9,18 @@ public abstract class GameObject {
     double radius;
     boolean dead;
     boolean god = false;
+    boolean collisions;
 
 
 
-    public GameObject(Vector2D position, Vector2D velocity, double radius){
+    public GameObject(Vector2D position, Vector2D velocity, double radius, boolean colidable){
         this.position = position;
         this.velocity = velocity;
         this.radius = radius;
         this.dead = false;
         this.sizeX = Constants.blockSize;
         this.sizeY = Constants.blockSize;
+        this.collisions = false;
     }
 
     public void hit(){
@@ -28,6 +30,17 @@ public abstract class GameObject {
 
 
     public boolean overlap(GameObject other){
+
+        if (position.dist(other.position) < (radius - 1) + (other.radius - 1)) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public boolean trueOverlap(GameObject other){
+
         if (position.dist(other.position) < radius + other.radius) {
             return true;
         }
@@ -46,10 +59,6 @@ public abstract class GameObject {
     }
 
     public void collisionHandling(GameObject other){
-        if (this.overlap(other)){
-            this.hit();
-            other.hit();
-        }
     }
 
     public abstract void update();

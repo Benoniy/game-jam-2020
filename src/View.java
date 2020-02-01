@@ -4,7 +4,7 @@ import java.awt.geom.AffineTransform;
 
 public class View extends JComponent {
     // background colour
-    public static final Color BG_COLOR = Color.BLUE;
+    public static final Color BG_COLOR = Color.BLACK;
     AffineTransform spriteAffine;
 
     private Game game;

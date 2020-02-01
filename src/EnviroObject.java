@@ -12,7 +12,7 @@ public abstract class EnviroObject extends GameObject {
 
 
     public EnviroObject(int posX, int posY, double radius, boolean colision, Image INtexture){
-        super(new Vector2D(Constants.translate(posX), Constants.translate(posY)), new Vector2D(0,0), radius);
+        super(new Vector2D(Constants.translate(posX), Constants.translate(posY)), new Vector2D(0,0), radius, colision);
         this.offsetX = Constants.translate(posX);
         this.offsetY = Constants.translate(posY);
         this.offset = new Vector2D(offsetX, offsetY);
