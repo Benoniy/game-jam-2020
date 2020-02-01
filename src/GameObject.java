@@ -5,6 +5,7 @@ import java.awt.*;
 public abstract class GameObject {
     public Vector2D position;
     Vector2D velocity;
+    int sizeX, sizeY;
     double radius;
     boolean dead;
     boolean god = false;
@@ -16,6 +17,8 @@ public abstract class GameObject {
         this.velocity = velocity;
         this.radius = radius;
         this.dead = false;
+        this.sizeX = Constants.blockSize;
+        this.sizeY = Constants.blockSize;
     }
 
     public void hit(){
@@ -49,10 +52,7 @@ public abstract class GameObject {
         }
     }
 
-    public void update(){
-        position.addScaled(velocity, Constants.DT);
-        position.wrap(Constants.width, Constants.height);
-    }
+    public abstract void update();
 
     public boolean canHit(GameObject other){return true;};
 
