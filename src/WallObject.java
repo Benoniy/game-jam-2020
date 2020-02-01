@@ -17,6 +17,9 @@ public class WallObject extends EnviroObject {
         g.drawRect((int) position.x, (int)position.y, sizeX, sizeY);
         */
 
+        g.setColor(Color.BLUE);
+        g.fillRect((int) position.x, (int)position.y, 5, 5);
+
         AffineTransform at = g.getTransform();
         g.translate(position.x, position.y);
         g.drawImage(texture, this.spriteAffine, null);
