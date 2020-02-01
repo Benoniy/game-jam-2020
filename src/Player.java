@@ -4,10 +4,12 @@ import java.awt.*;
 
 public class Player extends GameObject {
     private controlBlock control;
+    int offset;
 
     public Player(controlBlock control){
-        super(new Vector2D((Constants.width / 2) - Constants.blockRadius, (Constants.height / 2) - Constants.blockRadius), new Vector2D(0, 0), Constants.blockRadius, true);
+        super(new Vector2D((Constants.width / 2) - Constants.blockRadius, (Constants.height / 2) - Constants.blockRadius), new Vector2D(0, 0), Constants.blockRadius - 10, true);
         this.control = control;
+        this.offset = (int)(radius - Constants.blockRadius);
     }
 
     @Override
@@ -18,9 +20,10 @@ public class Player extends GameObject {
     @Override
     public void draw(Graphics2D g) {
         g.setColor(Color.RED);
-        g.fillOval((int)position.x, (int)position.y, Constants.blockRadius * 2, Constants.blockRadius * 2);
+
+        g.fillOval((int)position.x - offset, (int)position.y - offset, (int)radius * 2, (int)radius * 2);
         g.setColor(Color.BLACK);
-        g.drawOval((int)position.x, (int)position.y, Constants.blockRadius * 2, Constants.blockRadius * 2);
+        g.drawOval((int)position.x - offset, (int)position.y - offset, (int)radius * 2, (int)radius * 2);
     }
 
     public void collisionHandling(GameObject other){
