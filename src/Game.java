@@ -197,6 +197,7 @@ public class Game {
     }
 
     public static void main(String[] args) {
+        Constants.loadSettings();
         Game g = new Game();
         v = new View(g);
         MyWindow win = new MyWindow(v);
@@ -228,6 +229,7 @@ public class Game {
         /*if (pause.equals("mm")){
             genMainMenu();
         }*/
+
 
         int skipAmount = 0;
         int counter = 0;
