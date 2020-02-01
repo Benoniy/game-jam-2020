@@ -66,7 +66,7 @@ public class Game {
                 if (pixelArray[x][y] == -16777216) {
                     // Wall Object
                     //System.out.println("Original Coord: (" + x + ", " + y + ") translated: (" + (x -cbX) + ", " + (y - cbY) + ")");
-                    objects.add(new WallObject(x - cbX, y - cbY));
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.Wall1));
                 }
                 else {
                     // Else add floor

@@ -3,8 +3,8 @@ import java.awt.geom.AffineTransform;
 
 
 public class WallObject extends EnviroObject {
-    public WallObject(int posX, int posY) {
-        super(posX, posY, Constants.blockRadius, true, Sprites.Wall1);
+    public WallObject(int posX, int posY, Image sprite) {
+        super(posX, posY, Constants.blockRadius, true, sprite);
         System.out.println(position);
 }
     @Override
