@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Some Assemly Required:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Some_Assemly_Required_jar</output-path>
+    <root id="archive" name="Some Assembly Required.jar">
+      <element id="module-output" name="game-jam-2020" />
+    </root>
+  </artifact>
+</component>
