@@ -61,7 +61,6 @@ public class Player extends GameObject {
 
                 double Yvar = ((position.y - radius) - (other.position.y + other.radius));
                 double Xvar = ((position.x - radius) - (other.position.x + other.radius));
-                System.out.println(Xvar);
 
                 if (Yvar > -80) {
 

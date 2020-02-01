@@ -1,6 +1,10 @@
 import Resources.Vector2D;
 
 import java.awt.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+
 public class Constants {
     // Window dimensions
     public static int width = 1280;
@@ -20,4 +24,26 @@ public class Constants {
         return i * blockSize;
     }
 
+    public static void loadSettings() {
+        File f = new File("settings.cfg");
+        if (f.exists()){
+            System.out.println("Settings file exists");
+            try {
+                BufferedReader reader = new BufferedReader(new FileReader(f));
+                String line = reader.readLine();
+                line = line.toLowerCase().replace(" ", "").replace("resolution=", "");
+                String[] args = line.split("x");
+                Constants.width = Integer.parseInt(args[0]);
+                Constants.height = Integer.parseInt(args[1]);
+                Constants.screenDimension = new Dimension(width, height);
+                reader.close();
+            }
+            catch (Exception e){
+
+            }
+        }
+        else {
+
+        }
+    }
 }
