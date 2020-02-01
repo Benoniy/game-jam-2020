@@ -4,11 +4,14 @@ import java.awt.*;
 
 public abstract class EnviroObject extends GameObject {
     boolean colision;
+    int offsetX, offsetY;
+    Vector2D offset;
 
     public EnviroObject(int posX, int posY, double radius, boolean colision){
         super(new Vector2D(Constants.translate(posX), Constants.translate(posY)), new Vector2D(0,0), radius);
-        System.out.println(Constants.translate(posX));
-        System.out.println(Constants.translate(posY));
+        this.offsetX = Constants.translate(posX);
+        this.offsetY = Constants.translate(posY);
+        this.offset = new Vector2D(offsetX, offsetY);
     }
 
 
@@ -21,7 +24,8 @@ public abstract class EnviroObject extends GameObject {
     }
 
     @Override
-    public void update(){
-
+    public void update() {
+        this.position = new Vector2D(Constants.controlPosition).add(offset);
+        System.out.println(position);
     }
 }

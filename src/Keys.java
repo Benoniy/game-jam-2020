@@ -16,7 +16,6 @@ public class Keys extends KeyAdapter implements Controller {
 
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
-        System.out.println(e.getKeyChar());
         switch (key) {
             case KeyEvent.VK_UP:
                 action.Ymov = -1;

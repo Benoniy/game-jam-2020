@@ -27,7 +27,6 @@ public class controlBlock extends GameObject {
     public void update() {
         if (ctrl.action().Xmov == -1) {
             velocity.addScaled(new Vector2D(-2,0), 2);
-            System.out.println("ADD");
         }
         else if (ctrl.action().Xmov == 1){
             velocity.addScaled(new Vector2D(2,0), 2);
