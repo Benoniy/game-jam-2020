@@ -3,7 +3,7 @@ import java.awt.geom.AffineTransform;
 
 public class CrateObject extends EnviroObject {
     public CrateObject(int posX, int posY) {
-        super(posX, posY, Constants.blockRadius, true, Sprites.Crate1);
+        super(posX, posY, Constants.blockRadius, true, Sprites.Crate1, 0);
         System.out.println(position);
     }
     @Override
