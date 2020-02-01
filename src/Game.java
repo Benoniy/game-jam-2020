@@ -30,7 +30,7 @@ public class Game {
 
         // Opens PNG file, reads pixel by pixel
         BufferedImage mapImage = null;
-        mapImage = ImageIO.read(new File("assets/maptest.png"));
+        mapImage = ImageIO.read(new File("assets/map.png"));
         // RGB values of pixels are all merged into one
         System.out.println(mapImage);
         int[][] pixelArray = new int[mapImage.getWidth()][mapImage.getHeight()];
@@ -54,9 +54,19 @@ public class Game {
         // Find Remaining Objects
         for (int x = 0; x < pixelArray.length; x++) {
             for (int y = 0; y < pixelArray[x].length; y++) {
-                if (pixelArray[x][y] != -1 && pixelArray[x][y] != -16777216 && pixelArray[x][y] != -16765620 && pixelArray[x][y] != -12961222 &&
-                        pixelArray[x][y] != -3859094 && pixelArray[x][y] != -10446270 && pixelArray[x][y] != -5347032 && pixelArray[x][y] != -7947291 &&
-                pixelArray[x][y] != -6282368) {
+                if (pixelArray[x][y] != -1 && pixelArray[x][y] != -16777216 &&
+                        pixelArray[x][y] != -16765620 &&
+                        pixelArray[x][y] != -12961222 &&
+                        pixelArray[x][y] != -3859094 &&
+                        pixelArray[x][y] != -10446270 &&
+                        pixelArray[x][y] != -5347032 &&
+                        pixelArray[x][y] != -7947291 &&
+                        pixelArray[x][y] != -6282368 &&
+                        pixelArray[x][y] != -16776961 &&
+                        pixelArray[x][y] != -16715168 &&
+                        pixelArray[x][y] != -15603 &&
+                        pixelArray[x][y] != -7947291 &&
+                        pixelArray[x][y] != -65536) {
                     System.out.println("Original Coord: (" + x + ", " + y + ") translated: (" + (x -cbX) + ", " + (y - cbY) + ") Color: " + pixelArray[x][y]);
                 }
                 if (pixelArray[x][y] == -16777216) {
@@ -127,8 +137,8 @@ public class Game {
                     // Left Facing T-Junct.
                     objects.add(new WallObject(x - cbX, y - cbY, Sprites.Wall1, 0));
                 }
-                else if (pixelArray[x][y] == -65536) {
-                    // ???????/
+                else if (pixelArray[x][y] == -1237980) {
+                    // Right Facing T-Junct.
                     objects.add(new WallObject(x - cbX, y - cbY, Sprites.Wall1, 0));
                 }
                 else {
