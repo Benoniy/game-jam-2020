@@ -35,7 +35,7 @@ public class Game {
 
         // Opens PNG file, reads pixel by pixel
         BufferedImage mapImage = null;
-        mapImage = ImageIO.read(new File("assets/maptest2.png"));
+        mapImage = ImageIO.read(new File("assets/map.png"));
         // RGB values of pixels are all merged into one
         System.out.println(mapImage);
         int[][] pixelArray = new int[mapImage.getWidth()][mapImage.getHeight()];
@@ -66,7 +66,7 @@ public class Game {
                 if (pixelArray[x][y] == -16777216) {
                     // Wall Object
                     //System.out.println("Original Coord: (" + x + ", " + y + ") translated: (" + (x -cbX) + ", " + (y - cbY) + ")");
-                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.Wall1));
+                    objects.add(new WallObject(x - cbX, y - cbY));
                 }
                 else {
                     // Else add floor
