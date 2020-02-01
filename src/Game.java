@@ -33,14 +33,13 @@ public class Game {
 
         // Opens PNG file, reads pixel by pixel
         BufferedImage mapImage = null;
-        mapImage = ImageIO.read(new File("assets/maptest.png"));
+        mapImage = ImageIO.read(new File("assets/maptest2.png"));
         // RGB values of pixels are all merged into one
         System.out.println(mapImage);
         int[][] pixelArray = new int[mapImage.getWidth()][mapImage.getHeight()];
         for (int w = 0; w < mapImage.getWidth(); w++) {
             for (int h = 0; h < mapImage.getHeight(); h++) {
                 pixelArray[w][h] = mapImage.getRGB(w, h);
-                System.out.println(w + " " + h + " " + mapImage.getRGB(w, h));
             }
         }
         // Wall value = -16776961
@@ -62,9 +61,14 @@ public class Game {
         // Find Remaining Objects
         for (int x = 0; x < pixelArray.length; x++) {
             for (int y = 0; y < pixelArray[x].length; y++) {
-                if (pixelArray[x][x] == -16776961) {
+                if (pixelArray[x][y] == -16777216) {
                     // Wall Object
+                    //System.out.println("Original Coord: (" + x + ", " + y + ") translated: (" + (x -cbX) + ", " + (y - cbY) + ")");
                     objects.add(new WallObject(x - cbX, y - cbY));
+                }
+                else {
+                    // Else add floor
+                    objects.add(new FloorObject(x - cbX, y - cbY));
                 }
             }
         }
@@ -72,7 +76,6 @@ public class Game {
     }
 
     public static void main(String[] args) {
-        //readMap();
         Game g = new Game();
         View v = new View(g);
         MyWindow win = new MyWindow(v);
