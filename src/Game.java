@@ -44,29 +44,42 @@ public class Game {
                 pixelArray[w][h] = mapImage.getRGB(w, h);
             }
         }
-        // Wall value = -16776961
-        // Control Block value = -65536
-
         // Find Control Block
         int cbX = 0;
         int cbY = 0;
         for (int x = 0; x < pixelArray.length; x++) {
             for (int y = 0; y < pixelArray[x].length; y++) {
                 if (pixelArray[x][y] == -65536) {
-                    // Control Block Coord!
+                    // Control Block Coordinates
                     cbX = x;
                     cbY = y;
                 }
             }
         }
-
         // Find Remaining Objects
         for (int x = 0; x < pixelArray.length; x++) {
             for (int y = 0; y < pixelArray[x].length; y++) {
+                if (pixelArray[x][y] != -1 && pixelArray[x][y] != -16777216)
+                System.out.println("Original Coord: (" + x + ", " + y + ") translated: (" + (x -cbX) + ", " + (y - cbY) + ") Color: " + pixelArray[x][y]);
                 if (pixelArray[x][y] == -16777216) {
                     // Wall Object
-                    //System.out.println("Original Coord: (" + x + ", " + y + ") translated: (" + (x -cbX) + ", " + (y - cbY) + ")");
                     objects.add(new WallObject(x - cbX, y - cbY));
+                }
+                else if (pixelArray[x][y] == -65536) {
+                    //  Control Block
+                    objects.add(new WallObject(x - cbX, y -cbY));
+                }
+                else if (pixelArray[x][y] == -16776961) {
+                    // Arm
+                    objects.add(new CrateObject(x - cbX, y - cbY));
+                }
+                else if (pixelArray[x][y] == -16715168) {
+                    // Legs
+                    objects.add(new CrateObject(x - cbX, y - cbY));
+                }
+                else if (pixelArray[x][y] == -15603) {
+                    // Chest
+                    objects.add(new CrateObject(x - cbX, y - cbY));
                 }
                 else {
                     // Else add floor
