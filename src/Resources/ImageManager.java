@@ -11,7 +11,7 @@ import java.util.Map;
 public class ImageManager {
 
     // this may need modifying
-    public final static String path = "assets/";
+    public final static String path = "assets/images/";
     public final static String ext = ".png";
 
     public static Map<String, Image> images = new HashMap<String, Image>();

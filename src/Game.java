@@ -34,7 +34,7 @@ public class Game {
 
         // Opens PNG file, reads pixel by pixel
         BufferedImage mapImage = null;
-        mapImage = ImageIO.read(new File("assets/map.png"));
+        mapImage = ImageIO.read(new File("assets/images/map.png"));
         // RGB values of pixels are all merged into one
         System.out.println(mapImage);
         int[][] pixelArray = new int[mapImage.getWidth()][mapImage.getHeight()];
