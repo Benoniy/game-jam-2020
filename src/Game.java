@@ -5,10 +5,13 @@ import java.util.List;
 
 public class Game {
     public List<GameObject> objects;
-    public controlBlock CONTROL = new controlBlock();
+    public Keys ctrl;
+    public controlBlock CONTROL;
 
     Game(){
         objects = new ArrayList<>();
+        ctrl = new Keys();
+        CONTROL = new controlBlock(ctrl);
         objects.add(CONTROL);
         objects.add(new WallObject(1,1));
     }
@@ -18,6 +21,7 @@ public class Game {
         View v = new View(g);
         MyWindow win = new MyWindow(v);
 
+        win.addKeyListener(g.ctrl);
         while (true){
             g.update();
             v.repaint();
@@ -30,6 +34,8 @@ public class Game {
     }
 
     public void update(){
-
+        for (GameObject o : objects){
+            o.update();
+        }
     }
 }
