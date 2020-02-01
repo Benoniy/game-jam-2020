@@ -153,14 +153,34 @@ public class Game {
                     objects.add(new WallObject(x - cbX, y - cbY, Sprites.Wall1, 0));
                 }
                 else if (pixelArray[x][y] == -16759452) {
-                    // Vert Door ???
-                    objects.add(new FloorObject(x - cbX, y - cbY));
-                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorend, 0));
-                }
-                else if (pixelArray[x][y] == -16731413) {
                     // Vert Door Mid
                     objects.add(new FloorObject(x - cbX, y - cbY));
                     objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doormid, 0));
+                }
+                else if (pixelArray[x][y] == -16731413) {
+                    // Vert Door End (bottom)
+                    objects.add(new FloorObject(x - cbX, y - cbY));
+                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorend, 180));
+                }
+                else if (pixelArray[x][y] == -4201486) {
+                    // Vert Door End (top)
+                    objects.add(new FloorObject(x - cbX, y - cbY));
+                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorend, 0));
+                }
+                else if (pixelArray[x][y] == -9087) {
+                    // Horizontal Door Mid
+                    objects.add(new FloorObject(x - cbX, y - cbY));
+                    objects.add(new DoorObject(x -cbX, y - cbY, Sprites.doormid, 90));
+                }
+                else if (pixelArray[x][y] == -14507) {
+                    // Horizontal Door End (right)
+                    objects.add(new FloorObject(x - cbX, y - cbY));
+                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorend, 90));
+                }
+                else if (pixelArray[x][y] == -4091859) {
+                    // Horizontal Door End (left)
+                    objects.add(new FloorObject(x - cbX, y - cbY));
+                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorend, 270));
                 }
                 else {
                     // Else add floor
