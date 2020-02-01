@@ -3,7 +3,7 @@ import java.awt.geom.AffineTransform;
 
 
 public class WallObject extends EnviroObject {
-    public WallObject(int posX, int posY, double theta) {
+    public WallObject(int posX, int posY, Image sprite, double theta) {
         super(posX, posY, Constants.blockRadius, true, Sprites.Wall1, theta);
         System.out.println(position);
 }
@@ -18,7 +18,6 @@ public class WallObject extends EnviroObject {
         */
 
         AffineTransform at = g.getTransform();
-
         g.translate(position.x, position.y);
         g.drawImage(texture, this.spriteAffine, null);
 

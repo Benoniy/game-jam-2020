@@ -1,12 +1,7 @@
-import Resources.Vector2D;
-
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,15 +54,21 @@ public class Game {
         // Find Remaining Objects
         for (int x = 0; x < pixelArray.length; x++) {
             for (int y = 0; y < pixelArray[x].length; y++) {
-                if (pixelArray[x][y] != -1 && pixelArray[x][y] != -16777216)
-                System.out.println("Original Coord: (" + x + ", " + y + ") translated: (" + (x -cbX) + ", " + (y - cbY) + ") Color: " + pixelArray[x][y]);
+                if (pixelArray[x][y] != -1 && pixelArray[x][y] != -16777216 && pixelArray[x][y] != -16765620 && pixelArray[x][y] != -12961222 &&
+                        pixelArray[x][y] != -3859094 && pixelArray[x][y] != -10446270 && pixelArray[x][y] != -5347032) {
+                    System.out.println("Original Coord: (" + x + ", " + y + ") translated: (" + (x -cbX) + ", " + (y - cbY) + ") Color: " + pixelArray[x][y]);
+                }
                 if (pixelArray[x][y] == -16777216) {
-                    // Wall Object
-                    objects.add(new WallObject(x - cbX, y - cbY));
+                    // Horizontal Wall Object
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallMid));
+                }
+                else if (pixelArray[x][y] == -12961222) {
+                    // Vertical Wall
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallMid));
                 }
                 else if (pixelArray[x][y] == -65536) {
                     //  Control Block
-                    objects.add(new WallObject(x - cbX, y -cbY));
+                    objects.add(new WallObject(x - cbX, y -cbY, Sprites.Wall1));
                 }
                 else if (pixelArray[x][y] == -16776961) {
                     // Arm
@@ -80,6 +81,22 @@ public class Game {
                 else if (pixelArray[x][y] == -15603) {
                     // Chest
                     objects.add(new CrateObject(x - cbX, y - cbY));
+                }
+                else if (pixelArray[x][y] == -16765620) {
+                    // Up-Facing Wall End
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallEnd));
+                }
+                else if (pixelArray[x][y] == -3859094) {
+                    // Down-Facing Wall End
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallEnd));
+                }
+                else if (pixelArray[x][y] == -10446270) {
+                    // Left-Facing Wall End
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallEnd));
+                }
+                else if (pixelArray[x][y] == -5347032) {
+                    // Right-Facing Wall End
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallEnd));
                 }
                 else {
                     // Else add floor
