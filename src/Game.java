@@ -107,6 +107,10 @@ public class Game {
                     // Right-Facing Wall End
                     objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallEnd, 270));
                 }
+                else if (pixelArray[x][y] == -13020378) {
+                    // Top-Right Wall Corner
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallCor, 90));
+                }
                 else {
                     // Else add floor
                     objects.add(new FloorObject(x - cbX, y - cbY));
