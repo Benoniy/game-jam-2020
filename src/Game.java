@@ -111,6 +111,18 @@ public class Game {
                     // Top-Right Wall Corner
                     objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallCor, 90));
                 }
+                else if (pixelArray[x][y] == -16761313) {
+                    // Top-Left Wall Corner
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallCor, 0));
+                }
+                else if (pixelArray[x][y] == -10109071) {
+                    // Bottom Right Wall Corner
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallCor, 180));
+                }
+                else if (pixelArray[x][y] == -16751540) {
+                    // Bottom Left Wall Corner
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallCor, 270));
+                }
                 else {
                     // Else add floor
                     objects.add(new FloorObject(x - cbX, y - cbY));
