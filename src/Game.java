@@ -152,7 +152,12 @@ public class Game {
                     objects.add(new WallObject(x - cbX, y - cbY, Sprites.Wall1, 0));
                 }
                 else if (pixelArray[x][y] == -16759452) {
-                    // Door Mid
+                    // Vert Door Mid
+                    objects.add(new FloorObject(x - cbX, y - cbY));
+                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doormid, 0));
+                }
+                else if (pixelArray[x][y] == -16731413) {
+                    // Vert Door End
                     objects.add(new FloorObject(x - cbX, y - cbY));
                     objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorend, 0));
                 }
