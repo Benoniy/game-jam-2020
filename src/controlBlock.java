@@ -5,8 +5,8 @@ import java.awt.geom.AffineTransform;
 
 public class controlBlock extends GameObject {
     Controller ctrl;
-    public static final double DRAG = 1.0;
-    public static final double MAG_ACC = 200;
+    public static final double DRAG = 40;
+    public static final double SPEED = 10;
     Image texture = Sprites.Floor1;
     AffineTransform spriteAffine;
 
@@ -47,36 +47,42 @@ public class controlBlock extends GameObject {
 
     @Override
     public void update() {
+        System.out.println(velocity);
         if (ctrl.action().left) {
-            velocity.addScaled(new Vector2D(-2,0), 2);
+            velocity.subtract(new Vector2D(SPEED,0));
         }
         if (ctrl.action().right){
-            velocity.addScaled(new Vector2D(2,0), 2);
+            velocity.add(new Vector2D(SPEED,0));
         }
 
         if (ctrl.action().up){
-            velocity.addScaled(new Vector2D(0,-2), 2);
+            velocity.subtract(new Vector2D(0,SPEED));
         }
         if (ctrl.action().down){
-            velocity.addScaled(new Vector2D(0,2), 2);
+            velocity.add(new Vector2D(0,SPEED));
         }
 
 
-        if (velocity.x < 0){
+        if (velocity.x < 0 && !Action.left){
+
             velocity.add(DRAG, 0);
         }
-        else if (velocity.x > 0){
+        else if (velocity.x > 0 && !Action.right){
             velocity.subtract(DRAG, 0);
         }
 
-        if (velocity.y < 0){
+        if (velocity.y < 0 && !Action.up){
             velocity.add(0, DRAG);
         }
-        else if (velocity.y > 0){
+        else if (velocity.y > 0 && !Action.down){
             velocity.subtract(0, DRAG);
         }
 
         position.addScaled(velocity, Constants.DT);
+
+        if (velocity.x < 40 && velocity.x > -40 && velocity.y < 40 && velocity.y > -40 && !(Action.left || Action.right || Action.up || Action.down)){
+            velocity = new Vector2D(0, 0);
+        }
     }
 
     public void stopLeft(){
