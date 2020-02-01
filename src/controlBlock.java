@@ -7,11 +7,11 @@ public class controlBlock extends GameObject {
     Controller ctrl;
     public static final double DRAG = 1.0;
     public static final double MAG_ACC = 200;
-    Image texture = Sprites.Wall1;
+    Image texture = Sprites.Floor1;
     AffineTransform spriteAffine;
 
     controlBlock(Controller ctrl){
-        super(Constants.controlPosition, new Vector2D(0, 0), Constants.blockRadius, true);
+        super(Constants.controlPosition, new Vector2D(0, 0), Constants.blockRadius, false);
         this.ctrl = ctrl;
         if (texture != null){
             genSpriteAffine();

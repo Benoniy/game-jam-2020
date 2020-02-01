@@ -39,7 +39,7 @@ public abstract class GameObject {
         }
     }
 
-    public boolean trueOverlap(GameObject other){
+    public boolean resetOverlap(GameObject other){
 
         if (position.dist(other.position) < radius + other.radius) {
             return true;
