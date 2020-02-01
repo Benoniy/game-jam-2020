@@ -66,6 +66,8 @@ public class Game {
                         pixelArray[x][y] != -16715168 &&
                         pixelArray[x][y] != -15603 &&
                         pixelArray[x][y] != -7947291 &&
+                        pixelArray[x][y] != -754905 &&
+                        pixelArray[x][y] != -1237980 &&
                         pixelArray[x][y] != -65536) {
                     System.out.println("Original Coord: (" + x + ", " + y + ") translated: (" + (x -cbX) + ", " + (y - cbY) + ") Color: " + pixelArray[x][y]);
                 }
@@ -139,6 +141,10 @@ public class Game {
                 }
                 else if (pixelArray[x][y] == -1237980) {
                     // Right Facing T-Junct.
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.Wall1, 0));
+                }
+                else if (pixelArray[x][y] == -10351811) {
+                    // Up Facing T-Junct.
                     objects.add(new WallObject(x - cbX, y - cbY, Sprites.Wall1, 0));
                 }
                 else {
