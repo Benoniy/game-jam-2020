@@ -1,8 +1,6 @@
 import Resources.Vector2D;
 
 import java.awt.*;
-import java.util.ArrayList;
-
 public class Constants {
     // Window dimensions
     public static int width = 1280;
