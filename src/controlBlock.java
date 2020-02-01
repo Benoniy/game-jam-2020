@@ -6,7 +6,8 @@ import java.awt.geom.AffineTransform;
 public class controlBlock extends GameObject {
     Controller ctrl;
     public static final double DRAG = 40;
-    public static final double SPEED = 10;
+    public static final double SPEED = 16;
+    public static final double LIMIT = 600;
     Image texture = Sprites.Floor1;
     AffineTransform spriteAffine;
 
@@ -48,17 +49,17 @@ public class controlBlock extends GameObject {
     @Override
     public void update() {
         System.out.println(velocity);
-        if (ctrl.action().left) {
+        if (ctrl.action().left && velocity.x > -LIMIT) {
             velocity.subtract(new Vector2D(SPEED,0));
         }
-        if (ctrl.action().right){
+        if (ctrl.action().right && velocity.x < LIMIT){
             velocity.add(new Vector2D(SPEED,0));
         }
 
-        if (ctrl.action().up){
+        if (ctrl.action().up && velocity.y > -LIMIT){
             velocity.subtract(new Vector2D(0,SPEED));
         }
-        if (ctrl.action().down){
+        if (ctrl.action().down && velocity.y < LIMIT){
             velocity.add(new Vector2D(0,SPEED));
         }
 
