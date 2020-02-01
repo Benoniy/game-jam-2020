@@ -151,6 +151,11 @@ public class Game {
                     // Up Facing T-Junct.
                     objects.add(new WallObject(x - cbX, y - cbY, Sprites.Wall1, 0));
                 }
+                else if (pixelArray[x][y] == -16759452) {
+                    // Door Mid
+                    objects.add(new FloorObject(x - cbX, y - cbY));
+                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorend, 0));
+                }
                 else {
                     // Else add floor
                     objects.add(new FloorObject(x - cbX, y - cbY));
