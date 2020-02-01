@@ -2,7 +2,7 @@ import java.awt.*;
 
 public class FloorObject extends EnviroObject {
     public FloorObject(int posX, int posY, double radius) {
-        super(posX, posY, radius, false);
+        super(posX, posY, radius, false, null);
     }
     @Override
     public void draw(Graphics2D g) {
