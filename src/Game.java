@@ -153,7 +153,7 @@ public class Game {
                     objects.add(new WallObject(x - cbX, y - cbY, Sprites.Wall1, 0));
                 }
                 else if (pixelArray[x][y] == -16759452) {
-                    // Vert Door end
+                    // Vert Door ???
                     objects.add(new FloorObject(x - cbX, y - cbY));
                     objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorend, 0));
                 }
