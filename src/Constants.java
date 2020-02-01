@@ -1,6 +1,5 @@
-package Resources;
-
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Constants {
     // Window dimensions
@@ -11,4 +10,5 @@ public class Constants {
     // Used for the GameObject class
     public static final int DELAY = 20;  // in milliseconds
     public static final double DT = DELAY / 1000.0;  // in seconds
+
 }

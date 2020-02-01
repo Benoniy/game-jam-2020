@@ -1,7 +1,3 @@
-import Resources.Constants;
-import Resources.MyButton;
-import Resources.MyContentPanel;
-
 import javax.swing.*;
 import java.awt.*;
 

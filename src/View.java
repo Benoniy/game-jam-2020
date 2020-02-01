@@ -1,13 +1,10 @@
-import Resources.Constants;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
-import Resources.Constants;
 
 public class View extends JComponent {
     // background colour
-    public static final Color BG_COLOR = Color.black;
+    public static final Color BG_COLOR = Color.BLUE;
     AffineTransform spriteAffine;
 
     private Game game;
@@ -23,6 +20,10 @@ public class View extends JComponent {
         // paint the background
         g.setColor(BG_COLOR);
         g.fillRect(0, 0, getWidth(), getHeight());
+
+        for (GameObject o: game.objects){
+            o.draw(g);
+        }
 
     }
 
