@@ -6,7 +6,7 @@ import java.awt.geom.AffineTransform;
 public class controlBlock extends GameObject {
     Controller ctrl;
     public static final double DRAG = 40;
-    public static final double SPEED = 10;
+    public static final double SPEED = 16;
     Image texture = Sprites.Floor1;
     AffineTransform spriteAffine;
 
