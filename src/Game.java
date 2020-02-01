@@ -7,12 +7,16 @@ import java.util.List;
 
 public class Game {
     public List<GameObject> objects;
+    public List<GameObject> TEMPobjects;
     public Keys ctrl;
     public controlBlock CONTROL;
     public Player player;
+    public String pause = "mm";
+    private static View v;
 
     Game(){
         objects = new ArrayList<>();
+        TEMPobjects = new ArrayList<>();
         ctrl = new Keys();
         CONTROL = new controlBlock(ctrl);
         objects.add(CONTROL);
@@ -158,7 +162,7 @@ public class Game {
 
     public static void main(String[] args) {
         Game g = new Game();
-        View v = new View(g);
+        v = new View(g);
         MyWindow win = new MyWindow(v);
 
         win.addKeyListener(g.ctrl);
@@ -173,7 +177,22 @@ public class Game {
         }
     }
 
+    public void genMainMenu(){
+        TEMPobjects.addAll(objects);
+        objects.clear();
+        bigBlackSquare back = new bigBlackSquare();
+        objects.add(back);
+
+        while (pause.equals("mm")){
+            v.repaint();
+        }
+    }
+
     public void update(){
+        if (pause.equals("mm")){
+            genMainMenu();
+        }
+
         int skipAmount = 0;
         int counter = 0;
         for (GameObject o : objects) {
