@@ -72,6 +72,7 @@ public class Game {
                         pixelArray[x][y] != -7947291 &&
                         pixelArray[x][y] != -754905 &&
                         pixelArray[x][y] != -1237980 &&
+                        pixelArray[x][y] != -16731413 &&
                         pixelArray[x][y] != -65536) {
                     System.out.println("Original Coord: (" + x + ", " + y + ") translated: (" + (x -cbX) + ", " + (y - cbY) + ") Color: " + pixelArray[x][y]);
                 }
@@ -152,14 +153,14 @@ public class Game {
                     objects.add(new WallObject(x - cbX, y - cbY, Sprites.Wall1, 0));
                 }
                 else if (pixelArray[x][y] == -16759452) {
+                    // Vert Door end
+                    objects.add(new FloorObject(x - cbX, y - cbY));
+                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorend, 0));
+                }
+                else if (pixelArray[x][y] == -16731413) {
                     // Vert Door Mid
                     objects.add(new FloorObject(x - cbX, y - cbY));
                     objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doormid, 0));
-                }
-                else if (pixelArray[x][y] == -16731413) {
-                    // Vert Door End
-                    objects.add(new FloorObject(x - cbX, y - cbY));
-                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorend, 0));
                 }
                 else {
                     // Else add floor
