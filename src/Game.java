@@ -14,6 +14,7 @@ public class Game {
         CONTROL = new controlBlock(ctrl);
         objects.add(CONTROL);
         objects.add(new WallObject(1,1));
+        objects.add(new Player());
     }
 
     public static void main(String[] args) {

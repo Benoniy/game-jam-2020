@@ -26,6 +26,5 @@ public abstract class EnviroObject extends GameObject {
     @Override
     public void update() {
         this.position = new Vector2D(Constants.controlPosition).add(offset);
-        System.out.println(position);
     }
 }

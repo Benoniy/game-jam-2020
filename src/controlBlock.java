@@ -3,7 +3,6 @@ import Resources.Vector2D;
 import java.awt.*;
 
 public class controlBlock extends GameObject {
-
     Controller ctrl;
     public static final double DRAG = 1.0;
     public static final double MAG_ACC = 200;
