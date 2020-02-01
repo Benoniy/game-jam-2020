@@ -4,15 +4,14 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 
 public abstract class EnviroObject extends GameObject {
-    boolean colision;
     int offsetX, offsetY;
     Vector2D offset;
     Image texture = null;
     AffineTransform spriteAffine;
 
 
-    public EnviroObject(int posX, int posY, double radius, boolean colision, Image INtexture){
-        super(new Vector2D(Constants.translate(posX), Constants.translate(posY)), new Vector2D(0,0), radius, colision);
+    public EnviroObject(int posX, int posY, double radius, boolean collision, Image INtexture){
+        super(new Vector2D(Constants.translate(posX), Constants.translate(posY)), new Vector2D(0,0), radius, collision);
         this.offsetX = Constants.translate(posX);
         this.offsetY = Constants.translate(posY);
         this.offset = new Vector2D(offsetX, offsetY);
