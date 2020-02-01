@@ -123,6 +123,14 @@ public class Game {
                     // Bottom Left Wall Corner
                     objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallCor, 270));
                 }
+                else if (pixelArray[x][y] == -754905) {
+                    // Left Facing T-Junct.
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.Wall1, 0));
+                }
+                else if (pixelArray[x][y] == -65536) {
+                    // ???????/
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.Wall1, 0));
+                }
                 else {
                     // Else add floor
                     objects.add(new FloorObject(x - cbX, y - cbY));
