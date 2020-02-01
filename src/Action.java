@@ -1,5 +1,13 @@
 public class Action {
-    public int Ymov; // 0 = off, 1 = on
-    public int Xmov; // -1 = left turn, 0 = no turn, 1 = right turn
+    public static boolean left = false;
+    public static boolean right = false;
+    public static boolean up = false;
+    public static boolean down = false;
+
+    public static boolean leftAllowed = true;
+    public static boolean rightAllowed = true;
+    public static boolean upAllowed = true;
+    public static boolean downAllowed = true;
+
     public boolean shoot;
 }
