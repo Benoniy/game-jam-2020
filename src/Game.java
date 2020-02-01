@@ -60,15 +60,15 @@ public class Game {
                 }
                 if (pixelArray[x][y] == -16777216) {
                     // Horizontal Wall Object
-                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallMid));
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallMid, 90));
                 }
                 else if (pixelArray[x][y] == -12961222) {
                     // Vertical Wall
-                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallMid));
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallMid, 0));
                 }
                 else if (pixelArray[x][y] == -65536) {
                     //  Control Block
-                    objects.add(new WallObject(x - cbX, y -cbY, Sprites.Wall1));
+                    objects.add(new WallObject(x - cbX, y -cbY, Sprites.Wall1, 0));
                 }
                 else if (pixelArray[x][y] == -16776961) {
                     // Arm
@@ -84,19 +84,19 @@ public class Game {
                 }
                 else if (pixelArray[x][y] == -16765620) {
                     // Up-Facing Wall End
-                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallEnd));
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallEnd, 180));
                 }
                 else if (pixelArray[x][y] == -3859094) {
                     // Down-Facing Wall End
-                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallEnd));
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallEnd, 0));
                 }
                 else if (pixelArray[x][y] == -10446270) {
                     // Left-Facing Wall End
-                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallEnd));
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallEnd, 90));
                 }
                 else if (pixelArray[x][y] == -5347032) {
                     // Right-Facing Wall End
-                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallEnd));
+                    objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallEnd, 270));
                 }
                 else {
                     // Else add floor

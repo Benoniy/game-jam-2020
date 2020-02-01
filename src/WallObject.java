@@ -4,7 +4,7 @@ import java.awt.geom.AffineTransform;
 
 public class WallObject extends EnviroObject {
     public WallObject(int posX, int posY, Image sprite, double theta) {
-        super(posX, posY, Constants.blockRadius, true, Sprites.Wall1, theta);
+        super(posX, posY, Constants.blockRadius, true, sprite, theta);
         System.out.println(position);
 }
     @Override
