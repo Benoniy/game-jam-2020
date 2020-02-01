@@ -8,6 +8,4 @@ public class Action {
     public static boolean rightAllowed = true;
     public static boolean upAllowed = true;
     public static boolean downAllowed = true;
-
-    public boolean shoot;
 }
