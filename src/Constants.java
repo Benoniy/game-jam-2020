@@ -21,6 +21,8 @@ public class Constants {
     public static final double DT = DELAY / 1000.0;  // in seconds
 
     public static boolean backMusic = true;
+    public static String pause = "mm";
+    public static int pauseSelection = 1;
 
     public static int translate(int i){
         return i * blockSize;

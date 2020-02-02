@@ -1,4 +1,3 @@
-import Resources.Keys;
 import Resources.MyWindow;
 
 import javax.imageio.ImageIO;
@@ -15,7 +14,6 @@ public class Game {
     public Keys ctrl;
     public controlBlock CONTROL;
     public Player player;
-    public String pause = "mm";
     private static View v;
 
     Game(){
@@ -224,13 +222,32 @@ public class Game {
         objects.add(Help);
         objects.add(Exit);
 
-        while (pause.equals("mm")){
+        MenuSelector selector = new MenuSelector(Start.centerPosX, Start.centerPosY);
+        objects.add(selector);
+
+        while (Constants.pause.equals("mm")){
             v.repaint();
+            if (Constants.pauseSelection == 1){
+                selector.moveSelector(Start.centerPosX, Start.centerPosY);
+            }
+            else if (Constants.pauseSelection == 2){
+                selector.moveSelector(Settings.centerPosX, Settings.centerPosY);
+            }
+            else if (Constants.pauseSelection == 3){
+                selector.moveSelector(Help.centerPosX, Help.centerPosY);
+            }
+            else {
+                selector.moveSelector(Exit.centerPosX, Exit.centerPosY);
+            }
         }
+
+        objects.clear();
+        objects.addAll(TEMPobjects);
+        TEMPobjects.clear();
     }
 
     public void update(){
-        if (pause.equals("mm")){
+        if (Constants.pause.equals("mm")){
             genMainMenu();
         }
 
