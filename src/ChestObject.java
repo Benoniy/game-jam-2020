@@ -14,7 +14,9 @@ public class ChestObject extends EnviroObject {
 
     @Override
     public void Interaction() {
-
+        Constants.REMOVEobjects.addAll(chestDoors);
+        Constants.REMOVEobjects.add(this);
+        Constants.chest = true;
     }
 
     @Override

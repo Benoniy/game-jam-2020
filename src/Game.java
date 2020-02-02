@@ -19,6 +19,7 @@ public class Game {
 
     Game(){
         Constants.objects = new ArrayList<>();
+        Constants.REMOVEobjects = new ArrayList<>();
         TEMPobjects = new ArrayList<>();
         diaObjects = new ArrayList<>();
         ctrl = new Keys();
@@ -310,6 +311,10 @@ public class Game {
 
         int skipAmount = 0;
         int counter = 0;
+        if (!Constants.REMOVEobjects.isEmpty()){
+            Constants.objects.removeAll(Constants.REMOVEobjects);
+            Constants.REMOVEobjects.clear();
+        }
         for (GameObject o : Constants.objects) {
             if (o.getClass() != Player.class){
                 player.collisionHandling(o);
