@@ -1,9 +1,13 @@
 import java.awt.*;
 import java.awt.geom.AffineTransform;
+import java.util.ArrayList;
 
 public class ArmObject extends EnviroObject {
-    public ArmObject(int posX, int posY) {
+    ArrayList armDoors;
+
+    public ArmObject(int posX, int posY, ArrayList armDoors) {
         super(posX, posY, Constants.blockRadius, true, Sprites.arm, 0);
+        this.armDoors = armDoors;
         System.out.println(position);
         isInteractable = true;
     }

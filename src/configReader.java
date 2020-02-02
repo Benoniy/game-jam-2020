@@ -56,7 +56,7 @@ public class configReader {
                     doorList = armDoors;
                     // Get coordinates of Chest
                     ArrayList<Integer> coords = getCoords(line);
-                    objects.add(new ArmObject(coords.get(0), coords.get(1)));
+                    objects.add(new ArmObject(coords.get(0), coords.get(1), armDoors));
                 } else if (line.charAt(0) == 'H') {
                     doorList = headDoors;
                     // Get coordinates of Head
