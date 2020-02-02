@@ -78,7 +78,8 @@ public class Game {
                         pixelArray[x][y] != -754905 &&
                         pixelArray[x][y] != -1237980 &&
                         pixelArray[x][y] != -16731413 &&
-                        pixelArray[x][y] != -65536) {
+                        pixelArray[x][y] != -65536 &&
+                        pixelArray[x][y] != -9087) {
                     System.out.println("Original Coord: (" + x + ", " + y + ") translated: (" + (x -cbX) + ", " + (y - cbY) + ") Color: " + pixelArray[x][y]);
                 }
                 if (pixelArray[x][y] == -16777216) {
