@@ -17,13 +17,13 @@ public class HeadObject extends EnviroObject {
         if(!Constants.chest && !Constants.arm && !Constants.legs){
             Constants.currentDia = "one";
         }
-        else if (Constants.chest && !Constants.arm && !Constants.legs){
+        if (Constants.chest && !Constants.arm && !Constants.legs){
             Constants.currentDia = "two";
         }
-        else if (Constants.chest && Constants.arm && !Constants.legs){
+        if (Constants.chest && !Constants.arm && Constants.legs){
             Constants.currentDia = "three";
         }
-        else if ((Constants.chest && Constants.arm && Constants.legs)){
+        if ((Constants.chest && Constants.arm && Constants.legs)){
             Constants.currentDia = "four";
         }
 

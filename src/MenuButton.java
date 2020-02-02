@@ -34,12 +34,17 @@ public class MenuButton extends GameObject {
 
     @Override
     public void draw(Graphics2D g) {
-        g.setColor(Color.BLUE);
+
+
+        g.setColor(Color.CYAN);
+        g.fillRect(centerPosX, centerPosY, width, height);
+
+        g.setColor(Color.BLACK);
         g.drawRect(centerPosX, centerPosY, width, height);
 
         Font font = new Font("Serif", Font.PLAIN, 20);
         g.setFont(font);
-        g.setColor(Color.YELLOW);
+        g.setColor(Color.BLACK);
         g.drawString(text, centerPosX + 10, (int)position.y);
     }
 }

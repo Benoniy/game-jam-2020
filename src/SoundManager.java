@@ -18,7 +18,7 @@ public class SoundManager {
     // note: having too many clips open may cause
     // "LineUnavailableException: No Free Voices"
 
-    public final static Clip testClip = getClip("sneaky-snitch-by-kevin-macleod");
+    public final static Clip testClip = getClip("");
 
     public final static Clip[] clips = {testClip};
 

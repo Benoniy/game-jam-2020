@@ -110,11 +110,18 @@ public class Keys extends KeyAdapter implements Controller {
                     break;
             }
         }
-        if (Constants.pause.equals("i")) {
+        else if (Constants.pause.equals("i")) {
             switch (key){
                 case KeyEvent.VK_ENTER:
-                    Constants.pause = "";
-                    Constants.Interacting = false;
+                    if (!Constants.currentDia.equals("four")){
+                        Constants.pause = "";
+                        Constants.Interacting = false;
+                    }
+                    else{
+                        Constants.pause = "e";
+                        Constants.Interacting = false;
+                    }
+
                     break;
             }
         }
