@@ -1,5 +1,4 @@
 import Resources.MyWindow;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -111,24 +110,6 @@ public class Game {
                     //  Control Block
                     // objects.add(new WallObject(x - cbX, y -cbY, Sprites.Wall1, 0));
                 }
-                /*
-                else if (pixelArray[x][y] == -16776961) {
-                    // Arm
-                    objects.add(new ArmObject(x - cbX, y - cbY));
-                }
-                else if (pixelArray[x][y] == -16715168) {
-                    // Legs
-                    objects.add(new LegsObject(x - cbX, y - cbY));
-                }
-                else if (pixelArray[x][y] == -15603) {
-                    // Chest
-                    objects.add(new ChestObject(x - cbX, y - cbY));
-                }
-                else if (pixelArray[x][y] == -7947291) {
-                    // Head
-                    objects.add(new HeadObject(x - cbX, y - cbY));
-                }
-                 */
                 else if (pixelArray[x][y] == -16765620) {
                     // Up-Facing Wall End
                     objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallEnd, 180));
