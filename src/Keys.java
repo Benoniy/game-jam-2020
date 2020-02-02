@@ -54,10 +54,6 @@ public class Keys extends KeyAdapter implements Controller {
                         Constants.pauseSelection--;
                     }
                     break;
-                case KeyEvent.VK_LEFT:
-                    break;
-                case KeyEvent.VK_RIGHT:
-                    break;
                 case KeyEvent.VK_DOWN:
                     if (Constants.pauseSelection < 5){
                         Constants.pauseSelection++;
@@ -68,13 +64,48 @@ public class Keys extends KeyAdapter implements Controller {
                         Constants.pause = "";
                     }
                     else if (Constants.pauseSelection == 2){
-
+                        Constants.pause = "sm";
                     }
                     else if (Constants.pauseSelection == 3){
 
                     }
                     else {
                         System.exit(0);
+                    }
+                    break;
+            }
+        }
+        else if (Constants.pause.equals("sm")){
+            switch (key) {
+                case KeyEvent.VK_UP:
+                    if (Constants.pauseSelection > 1){
+                        Constants.pauseSelection--;
+                    }
+                    break;
+                case KeyEvent.VK_DOWN:
+                    if (Constants.pauseSelection < 5){
+                        Constants.pauseSelection++;
+                    }
+                    break;
+                case KeyEvent.VK_ENTER:
+                    if (Constants.pauseSelection == 1){
+                        if (Constants.currentRes < 2){
+                            Constants.currentRes ++;
+                        }
+                        else {
+                            Constants.currentRes = 0;
+                        }
+                        System.out.println(Constants.currentRes);
+                    }
+                    else if (Constants.pauseSelection == 2){
+
+                    }
+                    else if (Constants.pauseSelection == 3){
+
+                    }
+                    else {
+                        Constants.pause = "mm";
+                        Constants.saveSettings();
                     }
                     break;
             }

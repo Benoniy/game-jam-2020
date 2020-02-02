@@ -212,7 +212,10 @@ public class Game {
     }
 
     public void genMainMenu(){
-        TEMPobjects.addAll(objects);
+        if (TEMPobjects.isEmpty()){
+            TEMPobjects.addAll(objects);
+        }
+
         objects.clear();
         bigBlackSquare back = new bigBlackSquare();
         MenuButton Start = new MenuButton(Constants.width / 2,  Constants.height / 2 - 100, "Start");
@@ -243,15 +246,52 @@ public class Game {
                 selector.moveSelector(Exit.centerPosX, Exit.centerPosY);
             }
         }
+        if (Constants.pause.equals("sm")){genSettingsMenu();}
+    }
 
+    public void genSettingsMenu(){
+        System.out.println("SETTINGS");
         objects.clear();
-        objects.addAll(TEMPobjects);
-        TEMPobjects.clear();
+        bigBlackSquare back = new bigBlackSquare();
+        MenuButton Res = new MenuButton(Constants.width / 2,  Constants.height / 2 - 100, "Resolution: " + Constants.allowedRes.get(Constants.currentRes));
+        MenuButton Settings = new MenuButton(Constants.width / 2,  Constants.height / 2, "PlaceHolder");
+        MenuButton Help = new MenuButton(Constants.width / 2,  Constants.height / 2 + 100, "PlaceHolder");
+        MenuButton Back = new MenuButton(Constants.width / 2,  Constants.height / 2 + 200, "Back");
+        objects.add(back);
+        objects.add(Res);
+        objects.add(Settings);
+        objects.add(Help);
+        objects.add(Back);
+
+        MenuSelector selector = new MenuSelector(Res.centerPosX, Res.centerPosY);
+        objects.add(selector);
+
+        while (Constants.pause.equals("sm")){
+            Res.changeText("Resolution: " + Constants.allowedRes.get(Constants.currentRes));
+            v.repaint();
+            if (Constants.pauseSelection == 1){
+                selector.moveSelector(Res.centerPosX, Res.centerPosY);
+            }
+            else if (Constants.pauseSelection == 2){
+                selector.moveSelector(Settings.centerPosX, Settings.centerPosY);
+            }
+            else if (Constants.pauseSelection == 3){
+                selector.moveSelector(Help.centerPosX, Help.centerPosY);
+            }
+            else {
+                selector.moveSelector(Back.centerPosX, Back.centerPosY);
+            }
+        }
+
+        genMainMenu();
     }
 
     public void update(){
         if (Constants.pause.equals("mm")){
             genMainMenu();
+            objects.clear();
+            objects.addAll(TEMPobjects);
+            TEMPobjects.clear();
         }
 
         Constants.current = System.currentTimeMillis();

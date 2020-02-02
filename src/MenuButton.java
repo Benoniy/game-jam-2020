@@ -8,10 +8,14 @@ public class MenuButton extends GameObject {
 
     public MenuButton(double posX, double posY, String text){
         super(new Vector2D(posX, posY), new Vector2D(0, 0), 0, false);
-        width = Constants.width / 8;
+        width = Constants.width / 6;
         height = Constants.height / 10;
         centerPosX = ((int)position.x) - ((Constants.width / 10) * 4);
         centerPosY = ((int)position.y) - height / 2;
+        this.text = text;
+    }
+
+    public void changeText(String text){
         this.text = text;
     }
 
