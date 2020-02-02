@@ -7,6 +7,12 @@ public class CrateObject extends EnviroObject {
         super(posX, posY, Constants.blockRadius, true, Sprites.Crate1, thetAngle);
         System.out.println(position);
     }
+
+    @Override
+    public void Interaction() {
+
+    }
+
     @Override
     public void draw(Graphics2D g) {
 

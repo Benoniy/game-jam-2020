@@ -5,7 +5,14 @@ public class HeadObject extends EnviroObject {
     public HeadObject(int posX, int posY) {
         super(posX, posY, Constants.blockRadius, true, Sprites.head, 0);
         System.out.println(position);
+        isInteractable = true;
     }
+
+    @Override
+    public void Interaction() {
+        Constants.currentDia = "headDia1";
+    }
+
     @Override
     public void draw(Graphics2D g) {
 

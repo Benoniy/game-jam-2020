@@ -97,31 +97,40 @@ public class Player extends GameObject {
         g.setTransform(at);
     }
 
-    /*
-    public boolean overlap(GameObject other){
+    @Override
+    public void Interaction() {}
 
-        if (position.x < other.position.x + Constants.blockSize - 10 && position.x + radius > other.position.x + 10 &&
-                position.y < other.position.y + Constants.blockSize + 10 && position.y + Constants.blockRadius + radius > other.position.y - 10) {
+    public boolean interactOverlap(GameObject other){
+
+        if (position.dist(other.position) < (radius + Constants.blockRadius) + (other.radius + Constants.blockRadius)) {
             return true;
         }
         else{
             return false;
         }
     }
-    public boolean resetOverlap(GameObject other){
 
-        if (position.x < other.position.x + Constants.blockSize && position.x + radius > other.position.x &&
-                position.y < other.position.y + Constants.blockSize && position.y + radius > other.position.y) {
+    public boolean interactOverlapReset(GameObject other){
+
+        if (position.dist(other.position) < (radius + Constants.blockRadius + 10) + (other.radius + Constants.blockRadius + 10)) {
             return true;
         }
         else{
             return false;
         }
-
     }
-    */
 
     public void collisionHandling(GameObject other){
+        if (other.isInteractable){
+            if(this.interactOverlap(other)){
+                Constants.Interaction = true;
+                Constants.Interacting = true;
+                other.Interaction();
+            }
+            else if (!this.interactOverlap(other) && this.interactOverlapReset(other)) {
+                Constants.Interaction = false;
+            }
+        }
         if (other.collision) {
             if (this.overlap(other)) {
 

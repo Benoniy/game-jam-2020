@@ -7,6 +7,12 @@ public class DoorObject extends EnviroObject {
         super(posX, posY, Constants.blockRadius, true, sprite, theta);
         System.out.println(position);
     }
+
+    @Override
+    public void Interaction() {
+
+    }
+
     @Override
     public void draw(Graphics2D g) {
 

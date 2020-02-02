@@ -5,6 +5,12 @@ public class FloorObject extends EnviroObject {
     public FloorObject(int posX, int posY) {
         super(posX, posY,  Constants.blockRadius, false, Sprites.Floor1, 0);
     }
+
+    @Override
+    public void Interaction() {
+
+    }
+
     @Override
     public void draw(Graphics2D g) {
         /*

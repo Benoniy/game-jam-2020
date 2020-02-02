@@ -10,6 +10,7 @@ public abstract class GameObject {
     boolean dead;
     boolean god = false;
     boolean collision = false;
+    boolean isInteractable = false;
 
 
 
@@ -27,6 +28,7 @@ public abstract class GameObject {
         dead = true;
     }
 
+    public abstract void Interaction();
 
 
     public boolean overlap(GameObject other){
@@ -42,15 +44,6 @@ public abstract class GameObject {
     public boolean resetOverlap(GameObject other){
 
         if (position.dist(other.position) < radius + other.radius + 3) {
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-    public boolean spawnOverlap(GameObject other){
-        if (position.dist(other.position) < radius + other.radius + 50) {
             return true;
         }
         else{

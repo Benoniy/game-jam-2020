@@ -9,6 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Game {
     public List<GameObject> objects;
+    public List<GameObject> diaObjects;
     public List<GameObject> TEMPobjects;
     public Keys ctrl;
     public controlBlock CONTROL;
@@ -18,11 +19,11 @@ public class Game {
     Game(){
         objects = new ArrayList<>();
         TEMPobjects = new ArrayList<>();
+        diaObjects = new ArrayList<>();
         ctrl = new Keys();
         Constants.offsetControl();
         CONTROL = new controlBlock(ctrl);
         objects.add(CONTROL);
-        //objects.add(new WallObject(1,1));
         String mapname = "map";
         try {
             objects = readMap(objects, mapname);
@@ -268,12 +269,24 @@ public class Game {
         genMainMenu();
     }
 
+    public void genDialogue(){
+        dialogueBox d = new dialogueBox();
+        diaObjects.add(d);
+        while (Constants.Interacting){
+            v.repaint();
+        }
+    }
+
     public void update(){
         if (Constants.pause.equals("mm")){
             genMainMenu();
             objects.clear();
             objects.addAll(TEMPobjects);
             TEMPobjects.clear();
+        }
+
+        if (Constants.pause.equals("i")){
+            genDialogue();
         }
 
         Constants.current = System.currentTimeMillis();

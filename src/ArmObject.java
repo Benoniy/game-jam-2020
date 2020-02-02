@@ -5,7 +5,14 @@ public class ArmObject extends EnviroObject {
     public ArmObject(int posX, int posY) {
         super(posX, posY, Constants.blockRadius, true, Sprites.arm, 0);
         System.out.println(position);
+        isInteractable = true;
     }
+
+    @Override
+    public void Interaction() {
+
+    }
+
     @Override
     public void draw(Graphics2D g) {
 

@@ -5,7 +5,14 @@ public class ChestObject extends EnviroObject {
     public ChestObject(int posX, int posY) {
         super(posX, posY, Constants.blockRadius, true, Sprites.chest, 0);
         System.out.println(position);
+        isInteractable = true;
     }
+
+    @Override
+    public void Interaction() {
+
+    }
+
     @Override
     public void draw(Graphics2D g) {
 
