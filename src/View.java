@@ -25,6 +25,12 @@ public class View extends JComponent {
             o.draw(g);
         }
 
+        if (!game.diaObjects.isEmpty()){
+            for (GameObject o: game.diaObjects){
+                o.draw(g);
+            }
+        }
+
     }
 
     @Override

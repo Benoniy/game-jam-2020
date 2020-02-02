@@ -51,15 +51,6 @@ public abstract class GameObject {
         }
     }
 
-    public boolean spawnOverlap(GameObject other){
-        if (position.dist(other.position) < radius + other.radius + 50) {
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
     public void collisionHandling(GameObject other){
     }
 

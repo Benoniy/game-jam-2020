@@ -14,6 +14,8 @@ public class Constants {
 
     public static List<String> allowedRes = Arrays.asList("640x480", "1280x720", "1920x1080");
     public static int currentRes = 1;
+    public static String currentDia = "";
+    public static boolean Interaction = false;
 
 
     public static long current = -1;

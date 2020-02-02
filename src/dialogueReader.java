@@ -4,10 +4,6 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class dialogueReader {
-    public dialogueReader() {
-
-    }
-
     public String read(String dialogue) {
         try {
             // Read File
@@ -23,7 +19,7 @@ public class dialogueReader {
                     // If comment
                     continue;
                 }
-                toReturn.append(" ").append(line);
+                toReturn.append("\n").append(line);
             }
             return toReturn.toString();
 

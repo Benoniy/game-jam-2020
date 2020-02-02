@@ -124,6 +124,11 @@ public class Keys extends KeyAdapter implements Controller {
                 case KeyEvent.VK_S:
                     action.up = false;
                     break;
+                case KeyEvent.VK_E:
+                    if (Constants.Interaction){
+                        Constants.pause = "i";
+                    }
+                    break;
             }
         }
 
