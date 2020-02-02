@@ -49,7 +49,7 @@ public class dialogueBox extends GameObject {
             currentY += 30;
         }
 
-
+        g.drawString("Press Enter to continue", Constants.width - 280, Constants.height - 50);
         currentY = 30;
     }
 }

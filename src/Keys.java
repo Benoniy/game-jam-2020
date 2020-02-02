@@ -139,7 +139,7 @@ public class Keys extends KeyAdapter implements Controller {
                 case KeyEvent.VK_S:
                     action.up = false;
                     break;
-                case KeyEvent.VK_E:
+                case KeyEvent.VK_ENTER:
                     if (Constants.Interaction && !Constants.currentDia.equals("")){
                         action.up = false;
                         action.left = false;
