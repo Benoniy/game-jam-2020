@@ -10,7 +10,7 @@ public class HeadObject extends EnviroObject {
 
     @Override
     public void Interaction() {
-        Constants.currentDia = "headDia1";
+        Constants.currentDia = "one";
     }
 
     @Override

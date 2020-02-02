@@ -110,6 +110,14 @@ public class Keys extends KeyAdapter implements Controller {
                     break;
             }
         }
+        if (Constants.pause.equals("i")) {
+            switch (key){
+                case KeyEvent.VK_ENTER:
+                    Constants.pause = "";
+                    Constants.Interacting = false;
+                    break;
+            }
+        }
         else {
             switch (key) {
                 case KeyEvent.VK_W:
@@ -125,7 +133,7 @@ public class Keys extends KeyAdapter implements Controller {
                     action.up = false;
                     break;
                 case KeyEvent.VK_E:
-                    if (Constants.Interaction){
+                    if (Constants.Interaction && !Constants.currentDia.equals("")){
                         Constants.pause = "i";
                     }
                     break;

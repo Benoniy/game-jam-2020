@@ -129,6 +129,7 @@ public class Player extends GameObject {
             }
             else if (!this.interactOverlap(other) && this.interactOverlapReset(other)) {
                 Constants.Interaction = false;
+                Constants.currentDia = "";
             }
         }
         if (other.collision) {

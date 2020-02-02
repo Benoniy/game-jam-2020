@@ -7,6 +7,8 @@ import java.util.List;
 
 public class Constants {
     // Window dimensions
+    public static List<GameObject> objects;
+
     public static int width = 1280;
     public static int height = 720;
     public static Dimension screenDimension = new Dimension(width, height);

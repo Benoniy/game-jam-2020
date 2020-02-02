@@ -4,6 +4,8 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class dialogueReader {
+    public dialogueReader(){}
+
     public String read(String dialogue) {
         try {
             // Read File

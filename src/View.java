@@ -21,7 +21,7 @@ public class View extends JComponent {
         g.setColor(BG_COLOR);
         g.fillRect(0, 0, getWidth(), getHeight());
 
-        for (GameObject o: game.objects){
+        for (GameObject o: Constants.objects){
             o.draw(g);
         }
 

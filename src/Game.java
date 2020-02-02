@@ -7,8 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+
 public class Game {
-    public List<GameObject> objects;
+
     public List<GameObject> diaObjects;
     public List<GameObject> TEMPobjects;
     public Keys ctrl;
@@ -17,23 +18,23 @@ public class Game {
     private static View v;
 
     Game(){
-        objects = new ArrayList<>();
+        Constants.objects = new ArrayList<>();
         TEMPobjects = new ArrayList<>();
         diaObjects = new ArrayList<>();
         ctrl = new Keys();
         Constants.offsetControl();
         CONTROL = new controlBlock(ctrl);
-        objects.add(CONTROL);
+        Constants.objects.add(CONTROL);
         String mapname = "map";
         try {
-            objects = readMap(objects, mapname);
+            Constants.objects = readMap(Constants.objects, mapname);
         } catch (IOException e) {
             System.out.println("Couldn't find map image.");
         }
         configReader cr = new configReader(mapname);
-        objects.addAll(cr.objects);
+        Constants.objects.addAll(cr.objects);
         player = new Player(CONTROL);
-        objects.add(player);
+        Constants.objects.add(player);
     }
 
     public ArrayList readMap(List objects, String mapname) throws IOException {
@@ -201,23 +202,23 @@ public class Game {
 
     public void genMainMenu(){
         if (TEMPobjects.isEmpty()){
-            TEMPobjects.addAll(objects);
+            TEMPobjects.addAll(Constants.objects);
         }
 
-        objects.clear();
+        Constants.objects.clear();
         bigBlackSquare back = new bigBlackSquare();
         MenuButton Start = new MenuButton(Constants.width / 2,  Constants.height / 2 - 100, "Start");
         MenuButton Settings = new MenuButton(Constants.width / 2,  Constants.height / 2, "Settings");
         MenuButton Help = new MenuButton(Constants.width / 2,  Constants.height / 2 + 100, "Help");
         MenuButton Exit = new MenuButton(Constants.width / 2,  Constants.height / 2 + 200, "Exit");
-        objects.add(back);
-        objects.add(Start);
-        objects.add(Settings);
-        objects.add(Help);
-        objects.add(Exit);
+        Constants.objects.add(back);
+        Constants.objects.add(Start);
+        Constants.objects.add(Settings);
+        Constants.objects.add(Help);
+        Constants.objects.add(Exit);
 
         MenuSelector selector = new MenuSelector(Start.centerPosX, Start.centerPosY);
-        objects.add(selector);
+        Constants.objects.add(selector);
 
         while (Constants.pause.equals("mm")){
             v.repaint();
@@ -239,20 +240,20 @@ public class Game {
 
     public void genSettingsMenu(){
         System.out.println("SETTINGS");
-        objects.clear();
+        Constants.objects.clear();
         bigBlackSquare back = new bigBlackSquare();
         MenuButton Res = new MenuButton(Constants.width / 2,  Constants.height / 2 - 100, "Resolution: " + Constants.allowedRes.get(Constants.currentRes));
         MenuButton Settings = new MenuButton(Constants.width / 2,  Constants.height / 2, "PlaceHolder");
         MenuButton Help = new MenuButton(Constants.width / 2,  Constants.height / 2 + 100, "PlaceHolder");
         MenuButton Back = new MenuButton(Constants.width / 2,  Constants.height / 2 + 200, "Back");
-        objects.add(back);
-        objects.add(Res);
-        objects.add(Settings);
-        objects.add(Help);
-        objects.add(Back);
+        Constants.objects.add(back);
+        Constants.objects.add(Res);
+        Constants.objects.add(Settings);
+        Constants.objects.add(Help);
+        Constants.objects.add(Back);
 
         MenuSelector selector = new MenuSelector(Res.centerPosX, Res.centerPosY);
-        objects.add(selector);
+        Constants.objects.add(selector);
 
         while (Constants.pause.equals("sm")){
             Res.changeText("Resolution: " + Constants.allowedRes.get(Constants.currentRes));
@@ -280,13 +281,14 @@ public class Game {
         while (Constants.Interacting){
             v.repaint();
         }
+        diaObjects.clear();
     }
 
     public void update(){
         if (Constants.pause.equals("mm")){
             genMainMenu();
-            objects.clear();
-            objects.addAll(TEMPobjects);
+            Constants.objects.clear();
+            Constants.objects.addAll(TEMPobjects);
             TEMPobjects.clear();
         }
 
@@ -308,7 +310,7 @@ public class Game {
 
         int skipAmount = 0;
         int counter = 0;
-        for (GameObject o : objects) {
+        for (GameObject o : Constants.objects) {
             if (o.getClass() != Player.class){
                 player.collisionHandling(o);
             }
