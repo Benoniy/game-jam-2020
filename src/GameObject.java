@@ -51,6 +51,8 @@ public abstract class GameObject {
         }
     }
 
+    public abstract void addoffset(int x, int y);
+
     public void collisionHandling(GameObject other){
     }
 

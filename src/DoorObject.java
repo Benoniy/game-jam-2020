@@ -14,6 +14,11 @@ public class DoorObject extends EnviroObject {
     }
 
     @Override
+    public void addoffset(int x, int y) {
+
+    }
+
+    @Override
     public void draw(Graphics2D g) {
 
         /*
