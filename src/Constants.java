@@ -14,7 +14,7 @@ public class Constants {
 
     public static long current = -1;
     public static long last = -1;
-    public static long animationRate = 500;
+    public static long animationRate = 350;
     public static boolean ANIMATION_FRAME = false;
     public static int PLAYER_ANGLE = 0;
 
