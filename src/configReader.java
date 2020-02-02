@@ -14,13 +14,13 @@ public class configReader {
     public ArrayList legDoors;
 
     // Read in the config file
-    public configReader() {
+    public configReader(String mapname) {
         objects = new ArrayList<>();
         chestDoors = new ArrayList<>();
         headDoors = new ArrayList<>();
         armDoors = new ArrayList<>();
         legDoors =  new ArrayList<>();
-        readFile();
+        readFile(mapname);
     }
 
     private ArrayList getCoords(String line) {
@@ -32,10 +32,10 @@ public class configReader {
         return coordPair;
     }
 
-    private void readFile() {
+    private void readFile(String mapname) {
         try {
             // Read file in constructor?
-            File f = new File("assets/objects.cfg");
+            File f = new File("assets/maps/" + mapname + ".cfg");
             BufferedReader br = new BufferedReader(new FileReader(f));
 
             // Read Line-by-Line

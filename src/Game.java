@@ -24,22 +24,23 @@ public class Game {
         CONTROL = new controlBlock(ctrl);
         objects.add(CONTROL);
         //objects.add(new WallObject(1,1));
+        String mapname = "map";
         try {
-            objects = readMap(objects);
+            objects = readMap(objects, mapname);
         } catch (IOException e) {
             System.out.println("Couldn't find map image.");
         }
-        configReader cr = new configReader();
+        configReader cr = new configReader(mapname);
         objects.addAll(cr.objects);
         player = new Player(CONTROL);
         objects.add(player);
     }
 
-    public ArrayList readMap(List objects) throws IOException {
+    public ArrayList readMap(List objects, String mapname) throws IOException {
 
         // Opens PNG file, reads pixel by pixel
         BufferedImage mapImage = null;
-        mapImage = ImageIO.read(new File("assets/images/map.png"));
+        mapImage = ImageIO.read(new File("assets/maps/" + mapname + ".png"));
         // RGB values of pixels are all merged into one
         System.out.println(mapImage);
         int[][] pixelArray = new int[mapImage.getWidth()][mapImage.getHeight()];
