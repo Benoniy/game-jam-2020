@@ -20,7 +20,7 @@ public class dialogueReader {
 
             while ((line = bdr.readLine()) != null) {
                 if (line.charAt(0) == '#') {
-                    // If comment
+                    // If commenta
                     continue;
                 }
                 toReturn.append(" ").append(line);
