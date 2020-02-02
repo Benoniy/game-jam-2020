@@ -20,7 +20,7 @@ public class Game {
         objects = new ArrayList<>();
         TEMPobjects = new ArrayList<>();
         ctrl = new Keys();
-        Constants.offsetControl(4,1);
+        Constants.offsetControl();
         CONTROL = new controlBlock(ctrl);
         objects.add(CONTROL);
         //objects.add(new WallObject(1,1));
