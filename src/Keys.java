@@ -125,6 +125,13 @@ public class Keys extends KeyAdapter implements Controller {
                     break;
             }
         }
+        else if (Constants.pause.equals("e")) {
+            switch (key){
+                case KeyEvent.VK_ENTER:
+                    System.exit(1);
+                    break;
+            }
+        }
         else {
             switch (key) {
                 case KeyEvent.VK_W:

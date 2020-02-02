@@ -4,12 +4,13 @@ import java.awt.*;
 
 public class Sprites {
     public static Image Wall1, Floor1, Crate1, WallEnd, WallCor, WallMid, head, arm, legs, chest, doormid,
-            doorend, doorbroke, menuSelect, hand1, hand2, barrel, back;
+            doorend, doorbroke, menuSelect, hand1, hand2, barrel, back, END;
     static {
         try{
             // menu
             menuSelect = ImageManager.loadImage("menuThingy");
             back = ImageManager.loadImage("background");
+            END = ImageManager.loadImage("endbackground");
             // environment
             Wall1 = ImageManager.loadImage("wall");
             WallEnd = ImageManager.loadImage("wallEnd");

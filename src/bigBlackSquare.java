@@ -50,7 +50,7 @@ public class bigBlackSquare extends GameObject {
         g.setTransform(at);
 
         if (end){
-
+            texture = Sprites.END;
             Font font = new Font("Serif", Font.PLAIN, 40);
             g.setFont(font);
             g.setColor(Color.CYAN);
