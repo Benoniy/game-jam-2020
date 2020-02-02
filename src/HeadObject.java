@@ -14,7 +14,19 @@ public class HeadObject extends EnviroObject {
 
     @Override
     public void Interaction() {
-        Constants.currentDia = "one";
+        if(!Constants.chest && !Constants.arm && !Constants.legs){
+            Constants.currentDia = "one";
+        }
+        else if (Constants.chest && !Constants.arm && !Constants.legs){
+            Constants.currentDia = "two";
+        }
+        else if (Constants.chest && Constants.arm && !Constants.legs){
+            Constants.currentDia = "three";
+        }
+        else if ((Constants.chest && Constants.arm && Constants.legs)){
+            Constants.currentDia = "four";
+        }
+
     }
 
     @Override

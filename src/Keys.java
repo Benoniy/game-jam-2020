@@ -134,6 +134,10 @@ public class Keys extends KeyAdapter implements Controller {
                     break;
                 case KeyEvent.VK_E:
                     if (Constants.Interaction && !Constants.currentDia.equals("")){
+                        action.up = false;
+                        action.left = false;
+                        action.right = false;
+                        action.down = false;
                         Constants.pause = "i";
                     }
                     break;

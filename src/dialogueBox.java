@@ -3,7 +3,7 @@ import Resources.Vector2D;
 import java.awt.*;
 
 public class dialogueBox extends GameObject {
-    int currentY = 30;
+    int currentY = 50;
     String name;
     String[] text;
     dialogueBox(){
@@ -33,14 +33,14 @@ public class dialogueBox extends GameObject {
 
         Font font = new Font("Serif", Font.PLAIN, 30);
         g.setFont(font);
-        g.drawString(name, 10 , currentY + (Constants.height / 2));
+        g.drawString(name, 30 , currentY + (Constants.height / 2));
         currentY += 50;
 
         font = new Font("Serif", Font.PLAIN, 24);
         g.setFont(font);
 
         for (String s : text){
-            g.drawString(s, 10 , currentY + (Constants.height / 2));
+            g.drawString(s, 30 , currentY + (Constants.height / 2));
             currentY += 30;
         }
 
