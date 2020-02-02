@@ -14,7 +14,9 @@ public class ArmObject extends EnviroObject {
 
     @Override
     public void Interaction() {
-
+        Constants.REMOVEobjects.addAll(armDoors);
+        Constants.REMOVEobjects.add(this);
+        Constants.arm = true;
     }
 
     @Override

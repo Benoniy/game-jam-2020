@@ -6,8 +6,16 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Constants {
+    //Robot parts
+    public static boolean arm = false;
+    public static boolean legs = false;
+    public static boolean chest = false;
+
+
+
     // Window dimensions
     public static List<GameObject> objects;
+    public static List<GameObject> REMOVEobjects;
 
     public static int width = 1280;
     public static int height = 720;

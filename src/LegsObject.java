@@ -14,7 +14,9 @@ public class LegsObject extends EnviroObject {
 
     @Override
     public void Interaction() {
-
+        Constants.REMOVEobjects.addAll(legDoors);
+        Constants.REMOVEobjects.add(this);
+        Constants.legs = true;
     }
 
     @Override
