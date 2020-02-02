@@ -161,12 +161,12 @@ public class Game {
                 else if (pixelArray[x][y] == -14507) {
                     // broken door part
                     objects.add(new FloorObject(x - cbX, y - cbY));
-                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorbroke, 180));
+                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorbroke, 180, false));
                 }
                 else if (pixelArray[x][y] == -9087) {
                     // broken door part
                     objects.add(new FloorObject(x - cbX, y - cbY));
-                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorbroke, 0));
+                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorbroke, 0, false));
                 }
                 else if (pixelArray[x][y] == -6218463) {
                     // Barrel

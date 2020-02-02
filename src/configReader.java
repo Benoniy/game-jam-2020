@@ -70,14 +70,14 @@ public class configReader {
                 } else if (line.charAt(0) == 'D') {
                     // Get coords of door piece (normal ways)
                     ArrayList<Integer> coords = getCoords(line);
-                    DoorObject door = new DoorObject(coords.get(0), coords.get(1), Sprites.doormid, 0);
+                    DoorObject door = new DoorObject(coords.get(0), coords.get(1), Sprites.doormid, 0, true);
                     doorList.add(door);
                     objects.add(door);
                 } else if (line.charAt(0) == 'd') {
                     // Get coords of door piece (sideways)
                     System.out.println("d: " + line);
                     ArrayList<Integer> coords = getCoords(line);
-                    DoorObject door = new DoorObject(coords.get(0), coords.get(1), Sprites.doormid, 90);
+                    DoorObject door = new DoorObject(coords.get(0), coords.get(1), Sprites.doormid, 90, true);
                     doorList.add(door);
                     objects.add(door);
                 }
