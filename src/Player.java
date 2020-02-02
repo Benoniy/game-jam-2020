@@ -2,22 +2,35 @@ import Resources.Action;
 import Resources.Vector2D;
 
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 
 public class Player extends GameObject {
     private controlBlock control;
     int offset;
     double diam;
+    Image texture = Sprites.hand1;
+    AffineTransform spriteAffine;
 
     public Player(controlBlock control){
         super(new Vector2D((Constants.width / 2) - Constants.blockRadius, (Constants.height / 2) - Constants.blockRadius), new Vector2D(0, 0), Constants.blockRadius - 10, true);
         this.control = control;
         this.offset = (int)(radius - Constants.blockRadius);
         this.diam = radius * 2;
+        genSpriteAffine();
+    }
+
+    private void genSpriteAffine(){
+
     }
 
     @Override
     public void update() {
-
+        if (Constants.ANIMATION_FRAME){
+            texture = Sprites.hand2;
+        }
+        else {
+            texture = Sprites.hand1;
+        }
     }
 
     @Override

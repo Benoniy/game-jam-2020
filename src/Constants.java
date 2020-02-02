@@ -11,6 +11,8 @@ public class Constants {
     public static int height = 720;
     public static Dimension screenDimension = new Dimension(width, height);
 
+    public static boolean ANIMATION_FRAME = false;
+
     public static int blockSize = 96;
     public static int blockRadius = blockSize / 2;
 
