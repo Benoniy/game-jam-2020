@@ -3,9 +3,12 @@ import Resources.ImageManager;
 import java.awt.*;
 
 public class Sprites {
-    public static Image Wall1, Floor1, Crate1, WallEnd, WallCor, WallMid, head, arm, legs, chest, doormid, doorend, doorbroke;
+    public static Image Wall1, Floor1, Crate1, WallEnd, WallCor, WallMid, head, arm, legs, chest, doormid, doorend, doorbroke, menuSelect;
     static {
         try{
+            // menu
+            menuSelect = ImageManager.loadImage("menuThingy");
+            // environment
             Wall1 = ImageManager.loadImage("wall");
             WallEnd = ImageManager.loadImage("wallEnd");
             WallCor = ImageManager.loadImage("wallCorner");
