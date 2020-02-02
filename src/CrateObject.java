@@ -1,9 +1,10 @@
 import java.awt.*;
 import java.awt.geom.AffineTransform;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class CrateObject extends EnviroObject {
-    public CrateObject(int posX, int posY) {
-        super(posX, posY, Constants.blockRadius, true, Sprites.Crate1, 0);
+    public CrateObject(int posX, int posY, int thetAngle) {
+        super(posX, posY, Constants.blockRadius, true, Sprites.Crate1, thetAngle);
         System.out.println(position);
     }
     @Override

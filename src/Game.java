@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Game {
     public List<GameObject> objects;
@@ -90,7 +91,20 @@ public class Game {
                 }
                 else if (pixelArray[x][y] == -6282368) {
                     // Boxes
-                    objects.add(new CrateObject(x - cbX, y - cbY));
+                    int angle;
+                    int randNum = ThreadLocalRandom.current().nextInt(0, 3);
+                    if (randNum == 0) {
+                        angle = 90;
+                    }
+                    else if (randNum == 1) {
+                        angle = 180;
+                    }
+                    else if (randNum == 2) {
+                        angle = 270;
+                    } else {
+                        angle = 0;
+                    }
+                    objects.add(new CrateObject(x - cbX, y - cbY, angle));
                 }
                 else if (pixelArray[x][y] == -65536) {
                     //  Control Block
