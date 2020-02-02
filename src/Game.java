@@ -166,6 +166,11 @@ public class Game {
                     objects.add(new FloorObject(x - cbX, y - cbY));
                     objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorbroke, 0));
                 }
+                else if (pixelArray[x][y] == -6218463) {
+                    // Barrel
+                    objects.add(new FloorObject(x - cbX, y - cbY));
+                    objects.add(new BarrelObject(x - cbX, y - cbY, 0));
+                }
                 else if (pixelArray[x][y] == -1){
                     // Else add floor
                     objects.add(new FloorObject(x - cbX, y - cbY));

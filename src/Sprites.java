@@ -3,7 +3,8 @@ import Resources.ImageManager;
 import java.awt.*;
 
 public class Sprites {
-    public static Image Wall1, Floor1, Crate1, WallEnd, WallCor, WallMid, head, arm, legs, chest, doormid, doorend, doorbroke, menuSelect, hand1, hand2;
+    public static Image Wall1, Floor1, Crate1, WallEnd, WallCor, WallMid, head, arm, legs, chest, doormid,
+            doorend, doorbroke, menuSelect, hand1, hand2, barrel;
     static {
         try{
             // menu
@@ -18,6 +19,7 @@ public class Sprites {
             doormid = ImageManager.loadImage("doormid");
             doorend = ImageManager.loadImage("doorend");
             doorbroke = ImageManager.loadImage("doorendbroken");
+            barrel = ImageManager.loadImage("daru");
             // body parts
             head = ImageManager.loadImage("head");
             arm = ImageManager.loadImage("arm");
