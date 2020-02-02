@@ -251,6 +251,17 @@ public class Game {
             genMainMenu();
         }
 
+        Constants.current = System.currentTimeMillis();
+
+        if (Constants.last == -1){
+            Constants.last = System.currentTimeMillis();
+            Constants.current = System.currentTimeMillis();
+        }
+
+        if (Constants.current - Constants.last > Constants.animationRate){
+            Constants.ANIMATION_FRAME = !Constants.ANIMATION_FRAME;
+            Constants.last = System.currentTimeMillis();
+        }
 
         int skipAmount = 0;
         int counter = 0;

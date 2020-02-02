@@ -11,7 +11,12 @@ public class Constants {
     public static int height = 720;
     public static Dimension screenDimension = new Dimension(width, height);
 
+
+    public static long current = -1;
+    public static long last = -1;
+    public static long animationRate = 500;
     public static boolean ANIMATION_FRAME = false;
+    public static int PLAYER_ANGLE = 0;
 
     public static int blockSize = 96;
     public static int blockRadius = blockSize / 2;
