@@ -13,11 +13,15 @@ The PNG file will be used to place walls, crates, etc. on the map - including fl
 <br>
 ![Map Key](map-modding-key.png)
 <br>
+You'll also need to place a single red-pixel (255 R, 0 B, 0G) on your map, this marks where the player spawns (the player spawns down and left of wherever you place this pixel)  
+<br>
 In the config file, you need to mark the location of a body part with: <br>
 - H = Head
 - A = Arm
 - C = Chest
-- L = Legs <br>  
+- L = Legs  <br>   
 
 After each body part you should list the doors which you wish to be triggered (made to dissapear) after collection of the body part.
 ![Map Guide](map-modding-config-guide.png)
+<br>
+Coordinates are relative to the location of the command-block (marked by the red pixel) so coordinates up & left of this pixel are negative values and down & right are positive, with the command block itself being 0,0 always.
