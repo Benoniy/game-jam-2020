@@ -119,17 +119,11 @@ public class Keys extends KeyAdapter implements Controller {
                     }
                     else{
                         Constants.pause = "e";
+                        Constants.Interacting = false;
                     }
 
                     break;
             }
-        }
-        else if (Constants.pause.equals("e")){
-            switch (key){
-                case KeyEvent.VK_ENTER:
-                    System.exit(1);
-            }
-
         }
         else {
             switch (key) {

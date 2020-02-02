@@ -189,7 +189,8 @@ public class Game {
         MyWindow win = new MyWindow(v);
 
         win.addKeyListener(g.ctrl);
-        SoundManager.playBackgroundMusic();
+
+        //SoundManager.playBackgroundMusic();
         while (true){
             g.update();
             v.repaint();
@@ -207,7 +208,7 @@ public class Game {
         }
 
         Constants.objects.clear();
-        bigBlackSquare back = new bigBlackSquare();
+        bigBlackSquare back = new bigBlackSquare(false);
         MenuButton Start = new MenuButton(Constants.width / 2,  Constants.height / 2 - 100, "Start");
         MenuButton Settings = new MenuButton(Constants.width / 2,  Constants.height / 2, "Settings");
         MenuButton Help = new MenuButton(Constants.width / 2,  Constants.height / 2 + 100, "Help");
@@ -242,7 +243,7 @@ public class Game {
     public void genSettingsMenu(){
         System.out.println("SETTINGS");
         Constants.objects.clear();
-        bigBlackSquare back = new bigBlackSquare();
+        bigBlackSquare back = new bigBlackSquare(false);
         MenuButton Res = new MenuButton(Constants.width / 2,  Constants.height / 2 - 100, "Resolution: " + Constants.allowedRes.get(Constants.currentRes));
         MenuButton Settings = new MenuButton(Constants.width / 2,  Constants.height / 2, "PlaceHolder");
         MenuButton Help = new MenuButton(Constants.width / 2,  Constants.height / 2 + 100, "PlaceHolder");
@@ -289,7 +290,7 @@ public class Game {
 
         TEMPobjects.addAll(Constants.objects);
         Constants.objects.clear();
-        bigBlackSquare back = new bigBlackSquare();
+        bigBlackSquare back = new bigBlackSquare(true);
         Constants.objects.add(back);
 
         while (Constants.pause.equals("e")){
