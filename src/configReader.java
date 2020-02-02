@@ -42,7 +42,7 @@ public class configReader {
             ArrayList doorList = chestDoors;
             String line;
             while ((line = br.readLine()) != null) {
-                System.out.println("loop");
+                System.out.println("Config: " + line);
                 if (line.length() == 0) {
                     // prevent trying to get char @ 0 on empty lines as to not throw error
                     continue;
@@ -75,6 +75,7 @@ public class configReader {
                     objects.add(door);
                 } else if (line.charAt(0) == 'd') {
                     // Get coords of door piece (sideways)
+                    System.out.println("d: " + line);
                     ArrayList<Integer> coords = getCoords(line);
                     DoorObject door = new DoorObject(coords.get(0), coords.get(1), Sprites.doormid, 90);
                     doorList.add(door);
@@ -82,12 +83,7 @@ public class configReader {
                 }
             }
         } catch (IOException e) {
-            System.out.println("Warning: IOError in configReader");
+            System.out.println(e);
         }
-    }
-
-    public static void main(String[] args) {
-        System.out.println("testing configReader");
-        configReader cr = new configReader();
     }
 }

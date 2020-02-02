@@ -29,6 +29,8 @@ public class Game {
         } catch (IOException e) {
             System.out.println("Couldn't find map image.");
         }
+        configReader cr = new configReader();
+        objects.addAll(cr.objects);
         player = new Player(CONTROL);
         objects.add(player);
     }
