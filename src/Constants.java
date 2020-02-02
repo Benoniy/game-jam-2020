@@ -1,15 +1,19 @@
 import Resources.Vector2D;
 
 import java.awt.*;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Constants {
     // Window dimensions
     public static int width = 1280;
     public static int height = 720;
     public static Dimension screenDimension = new Dimension(width, height);
+
+    public static List<String> allowedRes = Arrays.asList("640x480", "1280x720", "1920x1080");
+    public static int currentRes = 1;
 
 
     public static long current = -1;
@@ -39,6 +43,27 @@ public class Constants {
         Constants.controlPosition = new Vector2D((width/3), (height/8));
     }
 
+    public static void saveSettings(){
+        File f = new File("settings.cfg");
+        f.delete();
+        System.out.println("Settings file exists");
+        String[] args = allowedRes.get(currentRes).split("x");
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(f));
+
+            String line = "resolution=" + args[0] + "x" + args[1];
+            writer.write(line);
+            Constants.width = Integer.parseInt(args[0]);
+            Constants.height = Integer.parseInt(args[1]);
+            Constants.screenDimension = new Dimension(width, height);
+            writer.close();
+        }
+        catch (Exception e){
+
+        }
+    }
+
+
     public static void loadSettings() {
         File f = new File("settings.cfg");
         if (f.exists()){
@@ -51,6 +76,14 @@ public class Constants {
                 Constants.width = Integer.parseInt(args[0]);
                 Constants.height = Integer.parseInt(args[1]);
                 Constants.screenDimension = new Dimension(width, height);
+                int count = 0;
+                for (String s : allowedRes){
+                    if (s.equals(args[0] + "x" + args[1])){
+                        break;
+                    }
+                    count ++;
+                }
+                currentRes = count;
                 reader.close();
             }
             catch (Exception e){
