@@ -124,6 +124,7 @@ public class Player extends GameObject {
         if (other.isInteractable){
             if(this.interactOverlap(other)){
                 Constants.Interaction = true;
+                Constants.Interacting = true;
                 other.Interaction();
             }
             else if (!this.interactOverlap(other) && this.interactOverlapReset(other)) {

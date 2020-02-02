@@ -271,7 +271,7 @@ public class Game {
     public void genDialogue(){
         dialogueBox d = new dialogueBox();
         diaObjects.add(d);
-        while (true){
+        while (Constants.Interacting){
             v.repaint();
         }
     }

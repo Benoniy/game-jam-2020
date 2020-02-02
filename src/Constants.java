@@ -2,7 +2,6 @@ import Resources.Vector2D;
 
 import java.awt.*;
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,6 +15,7 @@ public class Constants {
     public static int currentRes = 1;
     public static String currentDia = "";
     public static boolean Interaction = false;
+    public static boolean Interacting = false;
 
 
     public static long current = -1;
