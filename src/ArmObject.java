@@ -6,7 +6,7 @@ public class ArmObject extends EnviroObject {
     ArrayList armDoors;
 
     public ArmObject(int posX, int posY, ArrayList armDoors) {
-        super(posX, posY, Constants.blockRadius, true, Sprites.arm, 0);
+        super(posX, posY, Constants.blockRadius, true, Sprites.hand1, 0);
         this.armDoors = armDoors;
         System.out.println(position);
         isInteractable = true;
