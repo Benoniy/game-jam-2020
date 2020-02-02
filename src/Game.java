@@ -201,7 +201,7 @@ public class Game {
             g.update();
             v.repaint();
             try {
-                Thread.sleep(33);
+                Thread.sleep(18);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
