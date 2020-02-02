@@ -13,7 +13,7 @@ public class Player extends GameObject {
     AffineTransform spriteAffine;
 
     public Player(controlBlock control){
-        super(new Vector2D((Constants.width / 2) - Constants.blockRadius, (Constants.height / 2) - Constants.blockRadius), new Vector2D(0, 0), Constants.blockRadius - 10, true);
+        super(new Vector2D((Constants.width / 2) - Constants.blockRadius, (Constants.height / 2) - Constants.blockRadius), new Vector2D(0, 0), Constants.blockRadius, true);
         this.control = control;
         this.offset = (int)(radius - Constants.blockRadius);
         this.diam = radius * 2;
@@ -23,7 +23,7 @@ public class Player extends GameObject {
     public void genSpriteAffine(int i){
         double TxWidth = texture.getWidth(null);
         double TxHeight = texture.getHeight(null);
-        double stretchX = (diam /TxWidth);
+        double stretchX = (diam/TxWidth);
         double stretchY = (diam/TxHeight);
 
         spriteAffine = new AffineTransform();
@@ -48,9 +48,26 @@ public class Player extends GameObject {
         else {
             texture = Sprites.hand1;
         }
-        if(l != Action.left || r != Action.right || u != Action.up || d != Action.down){
-            genSpriteAffine(Constants.PLAYER_ANGLE);
+
+        Vector2D fakeVec = new Vector2D(control.velocity);
+        System.out.println(control.velocity);
+        if (fakeVec.x > fakeVec.y && fakeVec.x > -fakeVec.x && fakeVec.x > -fakeVec.y){
+            Constants.PLAYER_ANGLE = 3;
         }
+        else if (-fakeVec.x > fakeVec.y && -fakeVec.x > fakeVec.x && -fakeVec.x > -fakeVec.y){
+
+            Constants.PLAYER_ANGLE = 1;
+        }
+        else if (fakeVec.y > fakeVec.x && fakeVec.y > -fakeVec.x && fakeVec.y > -fakeVec.y){
+            Constants.PLAYER_ANGLE = 0;
+        }
+        else if (-fakeVec.y > fakeVec.x && -fakeVec.y > -fakeVec.x && -fakeVec.y > fakeVec.y){
+
+            Constants.PLAYER_ANGLE = 2;
+        }
+
+        genSpriteAffine(Constants.PLAYER_ANGLE);
+
     }
 
     public void AffineRotate90(double width, double height){

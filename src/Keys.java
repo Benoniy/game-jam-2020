@@ -23,25 +23,21 @@ public class Keys extends KeyAdapter implements Controller {
             case KeyEvent.VK_A:
                 if (action.rightAllowed){
                     action.right = true;
-                    Constants.PLAYER_ANGLE = 3;
                 }
                 break;
             case KeyEvent.VK_S:
                 if (action.upAllowed){
                     action.up = true;
-                    Constants.PLAYER_ANGLE = 2;
                 }
                 break;
             case KeyEvent.VK_D:
                 if (action.leftAllowed){
                     action.left = true;
-                    Constants.PLAYER_ANGLE = 1;
                 }
                 break;
             case KeyEvent.VK_W:
                 if (action.downAllowed){
                     action.down = true;
-                    Constants.PLAYER_ANGLE = 0;
                 }
                 break;
         }
