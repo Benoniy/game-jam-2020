@@ -180,7 +180,7 @@ public class Game {
                     objects.add(new FloorObject(x - cbX, y - cbY));
                     objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorbroke, 0));
                 }
-                else {
+                else if (pixelArray[x][y] == -1){
                     // Else add floor
                     objects.add(new FloorObject(x - cbX, y - cbY));
                 }
