@@ -5,7 +5,14 @@ public class LegsObject extends EnviroObject {
     public LegsObject(int posX, int posY) {
         super(posX, posY, Constants.blockRadius, true, Sprites.legs, 0);
         System.out.println(position);
+        isInteractable = true;
     }
+
+    @Override
+    public void Interaction() {
+
+    }
+
     @Override
     public void draw(Graphics2D g) {
 

@@ -8,6 +8,11 @@ public class bigBlackSquare extends GameObject {
     }
 
     @Override
+    public void Interaction() {
+
+    }
+
+    @Override
     public void update() {
 
     }

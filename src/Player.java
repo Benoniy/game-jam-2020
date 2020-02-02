@@ -121,7 +121,25 @@ public class Player extends GameObject {
     }
     */
 
+    @Override
+    public void Interaction() {}
+
+    public boolean interactOverlap(GameObject other){
+
+        if (position.dist(other.position) < (radius + Constants.blockRadius) + (other.radius + Constants.blockRadius)) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     public void collisionHandling(GameObject other){
+        if (other.isInteractable){
+            if(this.interactOverlap(other)){
+                System.out.println("Interact Overlap");
+            }
+        }
         if (other.collision) {
             if (this.overlap(other)) {
 

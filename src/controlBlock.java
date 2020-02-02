@@ -49,6 +49,11 @@ public class controlBlock extends GameObject {
     }
 
     @Override
+    public void Interaction() {
+
+    }
+
+    @Override
     public void update() {
         if (ctrl.action().left && velocity.x > -LIMIT) {
             velocity.subtract(new Vector2D(SPEED,0));

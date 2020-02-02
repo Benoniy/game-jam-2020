@@ -10,6 +10,7 @@ public abstract class GameObject {
     boolean dead;
     boolean god = false;
     boolean collision = false;
+    boolean isInteractable = false;
 
 
 
@@ -27,6 +28,7 @@ public abstract class GameObject {
         dead = true;
     }
 
+    public abstract void Interaction();
 
 
     public boolean overlap(GameObject other){
