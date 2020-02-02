@@ -8,6 +8,7 @@ public class Player extends GameObject {
     private controlBlock control;
     int offset;
     double diam;
+    boolean l, r, u, d = false;
     Image texture = Sprites.hand1;
     AffineTransform spriteAffine;
 
@@ -16,25 +17,51 @@ public class Player extends GameObject {
         this.control = control;
         this.offset = (int)(radius - Constants.blockRadius);
         this.diam = radius * 2;
-        genSpriteAffine();
+        genSpriteAffine(0);
     }
 
-    private void genSpriteAffine(){
+    public void genSpriteAffine(int i){
+        double TxWidth = texture.getWidth(null);
+        double TxHeight = texture.getHeight(null);
+        double stretchX = (diam /TxWidth);
+        double stretchY = (diam/TxHeight);
 
+        spriteAffine = new AffineTransform();
+
+        for (int n = 0; n < i; n++){
+            AffineRotate90(TxWidth, TxHeight);
+        }
+
+        spriteAffine.scale(stretchX, stretchY);
     }
 
     @Override
     public void update() {
-        if (Constants.ANIMATION_FRAME){
-            texture = Sprites.hand2;
+        if (Action.left || Action.right || Action.up || Action.down){
+            if (Constants.ANIMATION_FRAME){
+                texture = Sprites.hand2;
+            }
+            else {
+                texture = Sprites.hand1;
+            }
         }
         else {
             texture = Sprites.hand1;
         }
+        if(l != Action.left || r != Action.right || u != Action.up || d != Action.down){
+            genSpriteAffine(Constants.PLAYER_ANGLE);
+        }
+    }
+
+    public void AffineRotate90(double width, double height){
+        spriteAffine.rotate(Math.PI/2, width / 2, height /2);
+        double offset = (width - height)/2;
+        spriteAffine.translate(-offset, -offset);
     }
 
     @Override
     public void draw(Graphics2D g) {
+        /*
         g.setColor(Color.RED);
 
         g.fillOval((int)position.x - offset, (int)position.y - offset, (int)radius * 2, (int)radius * 2);
@@ -43,6 +70,14 @@ public class Player extends GameObject {
 
         g.setColor(Color.BLUE);
         g.fillRect((int) position.x, (int)position.y, 5, 5);
+        */
+
+
+        AffineTransform at = g.getTransform();
+        g.translate(position.x, position.y);
+        g.drawImage(texture, this.spriteAffine, null);
+
+        g.setTransform(at);
     }
 
     /*

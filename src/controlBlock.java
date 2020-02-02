@@ -52,6 +52,7 @@ public class controlBlock extends GameObject {
     public void update() {
         if (ctrl.action().left && velocity.x > -LIMIT) {
             velocity.subtract(new Vector2D(SPEED,0));
+            genSpriteAffine();
         }
         if (ctrl.action().right && velocity.x < LIMIT){
             velocity.add(new Vector2D(SPEED,0));
