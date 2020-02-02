@@ -36,12 +36,7 @@ public final class Vector2D {
     // compare for equality (note Object type argument)
     public boolean equals(Object o) {
         Vector2D v = (Vector2D) o;
-        if (this.x == v.x && this.y == v.y){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return this.x == v.x && this.y == v.y;
     }
 
     // String for displaying vector as text

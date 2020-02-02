@@ -5,9 +5,9 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class Keys extends KeyAdapter implements Controller {
-    Action action;
+    private Action action;
 
-    public Keys() {
+    Keys() {
         action = new Action();
 
     }
@@ -21,23 +21,23 @@ public class Keys extends KeyAdapter implements Controller {
         int key = e.getKeyCode();
         switch (key) {
             case KeyEvent.VK_A:
-                if (action.rightAllowed){
-                    action.right = true;
+                if (Action.rightAllowed){
+                    Action.right = true;
                 }
                 break;
             case KeyEvent.VK_S:
-                if (action.upAllowed){
-                    action.up = true;
+                if (Action.upAllowed){
+                    Action.up = true;
                 }
                 break;
             case KeyEvent.VK_D:
-                if (action.leftAllowed){
-                    action.left = true;
+                if (Action.leftAllowed){
+                    Action.left = true;
                 }
                 break;
             case KeyEvent.VK_W:
-                if (action.downAllowed){
-                    action.down = true;
+                if (Action.downAllowed){
+                    Action.down = true;
                 }
                 break;
         }
@@ -128,23 +128,23 @@ public class Keys extends KeyAdapter implements Controller {
         else {
             switch (key) {
                 case KeyEvent.VK_W:
-                    action.down = false;
+                    Action.down = false;
                     break;
                 case KeyEvent.VK_A:
-                    action.right = false;
+                    Action.right = false;
                     break;
                 case KeyEvent.VK_D:
-                    action.left = false;
+                    Action.left = false;
                     break;
                 case KeyEvent.VK_S:
-                    action.up = false;
+                    Action.up = false;
                     break;
                 case KeyEvent.VK_ENTER:
                     if (Constants.Interaction && !Constants.currentDia.equals("")){
-                        action.up = false;
-                        action.left = false;
-                        action.right = false;
-                        action.down = false;
+                        Action.up = false;
+                        Action.left = false;
+                        Action.right = false;
+                        Action.down = false;
                         Constants.pause = "i";
                     }
                     break;

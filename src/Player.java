@@ -6,8 +6,8 @@ import java.awt.geom.AffineTransform;
 
 public class Player extends GameObject {
     private controlBlock control;
-    int offset;
-    double diam;
+    private int offset;
+    private double diam;
     boolean l, r, u, d = false;
     Image texture = Sprites.hand1;
     AffineTransform spriteAffine;
@@ -50,7 +50,6 @@ public class Player extends GameObject {
         }
 
         Vector2D fakeVec = new Vector2D(control.velocity);
-        System.out.println(control.velocity);
         if (fakeVec.x > fakeVec.y && fakeVec.x > -fakeVec.x && fakeVec.x > -fakeVec.y){
             Constants.PLAYER_ANGLE = 3;
         }
@@ -107,22 +106,12 @@ public class Player extends GameObject {
 
     public boolean interactOverlap(GameObject other){
 
-        if (position.dist(other.position) < (radius + Constants.blockRadius) + (other.radius + Constants.blockRadius)) {
-            return true;
-        }
-        else{
-            return false;
-        }
+        return position.dist(other.position) < (radius + Constants.blockRadius) + (other.radius + Constants.blockRadius);
     }
 
     public boolean interactOverlapReset(GameObject other){
 
-        if (position.dist(other.position) < (radius + Constants.blockRadius + 10) + (other.radius + Constants.blockRadius + 10)) {
-            return true;
-        }
-        else{
-            return false;
-        }
+        return position.dist(other.position) < (radius + Constants.blockRadius + 10) + (other.radius + Constants.blockRadius + 10);
     }
 
     public void collisionHandling(GameObject other){

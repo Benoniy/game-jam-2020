@@ -4,11 +4,11 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 
 public class bigBlackSquare extends GameObject {
-    boolean end = false;
+    private boolean end = false;
     Image texture = Sprites.back;
     AffineTransform spriteAffine;
 
-    public bigBlackSquare(boolean end){
+    bigBlackSquare(boolean end){
         super(new Vector2D(0, 0), new Vector2D(0, 0), 0, false);
         this.end = end;
         genSpriteAffine();
@@ -24,7 +24,7 @@ public class bigBlackSquare extends GameObject {
 
     }
 
-    public void genSpriteAffine(){
+    private void genSpriteAffine(){
         double TxWidth = texture.getWidth(null);
         double TxHeight = texture.getHeight(null);
         double stretchX = (Constants.width/TxWidth);

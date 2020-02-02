@@ -33,22 +33,12 @@ public abstract class GameObject {
 
     public boolean overlap(GameObject other){
 
-        if (position.dist(other.position) < (radius - 5) + (other.radius - 5)) {
-            return true;
-        }
-        else{
-            return false;
-        }
+        return position.dist(other.position) < (radius - 5) + (other.radius - 5);
     }
 
     public boolean resetOverlap(GameObject other){
 
-        if (position.dist(other.position) < radius + other.radius + 3) {
-            return true;
-        }
-        else{
-            return false;
-        }
+        return position.dist(other.position) < radius + other.radius + 3;
     }
 
     public abstract void addoffset(int x, int y);
@@ -58,7 +48,7 @@ public abstract class GameObject {
 
     public abstract void update();
 
-    public boolean canHit(GameObject other){return true;};
+    public boolean canHit(GameObject other){return true;}
 
     public abstract void draw(Graphics2D g);
 }

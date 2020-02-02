@@ -1,6 +1,5 @@
 import java.awt.*;
 import java.awt.geom.AffineTransform;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class CrateObject extends EnviroObject {
     public CrateObject(int posX, int posY, int thetAngle) {

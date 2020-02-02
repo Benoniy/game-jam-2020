@@ -1,9 +1,7 @@
-import Resources.Action;
 import Resources.Vector2D;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class BarrelObject extends EnviroObject {
     public BarrelObject(int posX, int posY, int theAngle) {

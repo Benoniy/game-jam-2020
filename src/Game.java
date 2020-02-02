@@ -1,4 +1,5 @@
 import Resources.MyWindow;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -10,14 +11,14 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Game {
 
-    public List<GameObject> diaObjects;
-    public List<GameObject> TEMPobjects;
-    public Keys ctrl;
-    public controlBlock CONTROL;
-    public Player player;
+    List<GameObject> diaObjects;
+    private List<GameObject> TEMPobjects;
+    private Keys ctrl;
+    private controlBlock CONTROL;
+    private Player player;
     private static View v;
 
-    Game(){
+    private Game(){
         Constants.objects = new ArrayList<>();
         Constants.REMOVEobjects = new ArrayList<>();
         TEMPobjects = new ArrayList<>();
@@ -38,7 +39,7 @@ public class Game {
         Constants.objects.add(player);
     }
 
-    public ArrayList readMap(List objects, String mapname) throws IOException {
+    private ArrayList readMap(List objects, String mapname) throws IOException {
 
         // Opens PNG file, reads pixel by pixel
         BufferedImage mapImage = null;
@@ -66,25 +67,6 @@ public class Game {
         // Find Remaining Objects
         for (int x = 0; x < pixelArray.length; x++) {
             for (int y = 0; y < pixelArray[x].length; y++) {
-                if (pixelArray[x][y] != -1 && pixelArray[x][y] != -16777216 &&
-                        pixelArray[x][y] != -16765620 &&
-                        pixelArray[x][y] != -12961222 &&
-                        pixelArray[x][y] != -3859094 &&
-                        pixelArray[x][y] != -10446270 &&
-                        pixelArray[x][y] != -5347032 &&
-                        pixelArray[x][y] != -7947291 &&
-                        pixelArray[x][y] != -6282368 &&
-                        pixelArray[x][y] != -16776961 &&
-                        pixelArray[x][y] != -16715168 &&
-                        pixelArray[x][y] != -15603 &&
-                        pixelArray[x][y] != -7947291 &&
-                        pixelArray[x][y] != -754905 &&
-                        pixelArray[x][y] != -1237980 &&
-                        pixelArray[x][y] != -16731413 &&
-                        pixelArray[x][y] != -65536 &&
-                        pixelArray[x][y] != -9087) {
-                    System.out.println("Original Coord: (" + x + ", " + y + ") translated: (" + (x -cbX) + ", " + (y - cbY) + ") Color: " + pixelArray[x][y]);
-                }
                 if (pixelArray[x][y] == -16777216) {
                     // Horizontal Wall Object
                     objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallMid, 90));
@@ -190,7 +172,7 @@ public class Game {
 
         win.addKeyListener(g.ctrl);
 
-        //SoundManager.playBackgroundMusic();
+        SoundManager.playBackgroundMusic();
         while (true){
             g.update();
             v.repaint();
@@ -202,7 +184,7 @@ public class Game {
         }
     }
 
-    public void genMainMenu(){
+    private void genMainMenu(){
         if (TEMPobjects.isEmpty()){
             TEMPobjects.addAll(Constants.objects);
         }
@@ -240,7 +222,7 @@ public class Game {
         if (Constants.pause.equals("sm")){genSettingsMenu();}
     }
 
-    public void genSettingsMenu(){
+    private void genSettingsMenu(){
         System.out.println("SETTINGS");
         Constants.objects.clear();
         bigBlackSquare back = new bigBlackSquare(false);
@@ -277,7 +259,7 @@ public class Game {
         genMainMenu();
     }
 
-    public void genDialogue(){
+    private void genDialogue(){
         dialogueBox d = new dialogueBox();
         diaObjects.add(d);
         while (Constants.Interacting){
@@ -286,7 +268,7 @@ public class Game {
         diaObjects.clear();
     }
 
-    public void genEnd(){
+    private void genEnd(){
 
         TEMPobjects.addAll(Constants.objects);
         Constants.objects.clear();
@@ -298,7 +280,7 @@ public class Game {
         }
     }
 
-    public void update(){
+    private void update(){
         if (Constants.pause.equals("e")){
             genEnd();
         }

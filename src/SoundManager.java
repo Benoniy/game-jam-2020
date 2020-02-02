@@ -8,17 +8,11 @@ import java.io.File;
 // SoundManager for Asteroids
 
 public class SoundManager {
-
-    static int nBullet = 0;
-    static boolean thrusting = false;
-
-    // this may need modifying
     final static String path = "assets/sound/";
 
-    // note: having too many clips open may cause
-    // "LineUnavailableException: No Free Voices"
 
-    public final static Clip testClip = getClip("");
+
+    public final static Clip testClip = getClip("dreams-become-real-by-kevin-macleod");
 
     public final static Clip[] clips = {testClip};
 
@@ -28,8 +22,6 @@ public class SoundManager {
             Thread.sleep(1000);
         }
     }
-
-    // methods which do not modify any fields
 
     public static void play(Clip clip) {
         clip.setFramePosition(0);
@@ -48,8 +40,6 @@ public class SoundManager {
         }
         return clip;
     }
-    // Custom methods playing a particular sound
-    // Please add your own methods below
 
     public static void playBackgroundMusic(){
         if (Constants.backMusic){
