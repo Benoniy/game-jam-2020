@@ -25,6 +25,8 @@ public abstract class EnviroObject extends GameObject {
         }
     }
 
+
+
     public void genSpriteAffine(){
         double TxWidth = texture.getWidth(null);
         double TxHeight = texture.getHeight(null);

@@ -1,16 +1,28 @@
+import Resources.Action;
+import Resources.Vector2D;
+
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class BarrelObject extends EnviroObject {
     public BarrelObject(int posX, int posY, int theAngle) {
-        super(posX, posY, Constants.blockRadius, false, Sprites.barrel, theAngle);
-        System.out.println(position);
+        super(posX, posY, Constants.blockRadius, true, Sprites.barrel, theAngle);
     }
 
     @Override
     public void Interaction() {
 
+    }
+
+    @Override
+    public void addoffset(int x, int y) {
+        System.out.println(position);
+        this.offsetX += Constants.translate(x);
+        this.offsetY += Constants.translate(y);
+        this.offset = new Vector2D(offsetX, offsetY);
+        this.position = new Vector2D(Constants.controlPosition).add(offsetX, offsetY);
+        System.out.println(position);
     }
 
     @Override

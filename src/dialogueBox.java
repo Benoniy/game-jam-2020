@@ -20,6 +20,11 @@ public class dialogueBox extends GameObject {
     }
 
     @Override
+    public void addoffset(int x, int y) {
+
+    }
+
+    @Override
     public void update() {
 
     }

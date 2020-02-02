@@ -54,6 +54,11 @@ public class controlBlock extends GameObject {
     }
 
     @Override
+    public void addoffset(int x, int y) {
+
+    }
+
+    @Override
     public void update() {
         if (ctrl.action().left && velocity.x > -LIMIT) {
             velocity.subtract(new Vector2D(SPEED,0));

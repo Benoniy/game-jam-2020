@@ -100,6 +100,11 @@ public class Player extends GameObject {
     @Override
     public void Interaction() {}
 
+    @Override
+    public void addoffset(int x, int y) {
+
+    }
+
     public boolean interactOverlap(GameObject other){
 
         if (position.dist(other.position) < (radius + Constants.blockRadius) + (other.radius + Constants.blockRadius)) {
@@ -134,32 +139,53 @@ public class Player extends GameObject {
         }
         if (other.collision) {
             if (this.overlap(other)) {
-
                 double Yvar = ((position.y - radius) - (other.position.y + other.radius));
                 double Xvar = ((position.x - radius) - (other.position.x + other.radius));
 
-                if (Yvar > -80) {
-                    control.stopDown();
-                    Action.downAllowed = false;
-                    Action.down = false;
+                if (other.getClass() == BarrelObject.class){
+
+                    if (Yvar > -80) {
+                        other.addoffset(0, -1);
+                        Action.downAllowed = true;
+                    }
+                    else if (Yvar < -100) {
+                        other.addoffset(0, 1);
+                        Action.upAllowed = true;
+                    }
+                    if (Xvar > -80) {
+                        other.addoffset(-1, 0);
+                        Action.rightAllowed = true;
+                    }
+                    else if (Xvar < -100) {
+                        other.addoffset(1, 0);
+                        Action.leftAllowed = true;
+                    }
                 }
-                if (Yvar < -100) {
-                    control.stopUp();
-                    Action.upAllowed = false;
-                    Action.up = false;
+                else{
+                    if (Yvar > -80) {
+                        control.stopDown();
+                        Action.downAllowed = false;
+                        Action.down = false;
+                    }
+                    if (Yvar < -100) {
+                        control.stopUp();
+                        Action.upAllowed = false;
+                        Action.up = false;
+                    }
+
+                    if (Xvar > -80) {
+                        control.stopRight();
+                        Action.rightAllowed = false;
+                        Action.right = false;
+                    }
+
+                    if (Xvar < -100) {
+                        control.stopLeft();
+                        Action.leftAllowed = false;
+                        Action.left = false;
+                    }
                 }
 
-                if (Xvar > -80) {
-                    control.stopRight();
-                    Action.rightAllowed = false;
-                    Action.right = false;
-                }
-
-                if (Xvar < -100) {
-                    control.stopLeft();
-                    Action.leftAllowed = false;
-                    Action.left = false;
-                }
             }
             else if (!this.overlap(other) && this.resetOverlap(other)) {
                 Action.leftAllowed = true;
