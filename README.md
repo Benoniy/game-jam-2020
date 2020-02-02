@@ -9,4 +9,6 @@ It will be written in Java.
 You can modifiy most elements of our game, from using a custom map layout to using your own assets.
 
 To make your own map, you will need a PNG file and a .cfg file (plain-text) both with the same name. 
-The PNG file will be used to place walls, crates, etc. on the map - including floor tiles. The config file is used to determine the location of body parts and the doors they open up.
+The PNG file will be used to place walls, crates, etc. on the map - including floor tiles. The config file is used to determine the location of body parts and the doors they open up.  
+<br>
+![Map Key](map-modding-key.png)
