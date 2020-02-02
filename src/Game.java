@@ -96,6 +96,7 @@ public class Game {
                     //  Control Block
                     // objects.add(new WallObject(x - cbX, y -cbY, Sprites.Wall1, 0));
                 }
+                /*
                 else if (pixelArray[x][y] == -16776961) {
                     // Arm
                     objects.add(new ArmObject(x - cbX, y - cbY));
@@ -112,6 +113,7 @@ public class Game {
                     // Head
                     objects.add(new HeadObject(x - cbX, y - cbY));
                 }
+                 */
                 else if (pixelArray[x][y] == -16765620) {
                     // Up-Facing Wall End
                     objects.add(new WallObject(x - cbX, y - cbY, Sprites.WallEnd, 180));
@@ -156,35 +158,15 @@ public class Game {
                     // Up Facing T-Junct.
                     objects.add(new WallObject(x - cbX, y - cbY, Sprites.Wall1, 0));
                 }
-                else if (pixelArray[x][y] == -16759452) {
-                    // Vert Door Mid
+                else if (pixelArray[x][y] == -14507) {
+                    // broken door part
                     objects.add(new FloorObject(x - cbX, y - cbY));
-                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doormid, 0));
-                }
-                else if (pixelArray[x][y] == -16731413) {
-                    // Vert Door End (bottom)
-                    objects.add(new FloorObject(x - cbX, y - cbY));
-                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorend, 180));
-                }
-                else if (pixelArray[x][y] == -4201486) {
-                    // Vert Door End (top)
-                    objects.add(new FloorObject(x - cbX, y - cbY));
-                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorend, 0));
+                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorbroke, 180));
                 }
                 else if (pixelArray[x][y] == -9087) {
-                    // Horizontal Door Mid
+                    // broken door part
                     objects.add(new FloorObject(x - cbX, y - cbY));
-                    objects.add(new DoorObject(x -cbX, y - cbY, Sprites.doormid, 90));
-                }
-                else if (pixelArray[x][y] == -14507) {
-                    // Horizontal Door End (right)
-                    objects.add(new FloorObject(x - cbX, y - cbY));
-                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorend, 90));
-                }
-                else if (pixelArray[x][y] == -4091859) {
-                    // Horizontal Door End (left)
-                    objects.add(new FloorObject(x - cbX, y - cbY));
-                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorend, 270));
+                    objects.add(new DoorObject(x - cbX, y - cbY, Sprites.doorbroke, 0));
                 }
                 else {
                     // Else add floor
