@@ -12,3 +12,12 @@ To make your own map, you will need a PNG file and a .cfg file (plain-text) both
 The PNG file will be used to place walls, crates, etc. on the map - including floor tiles. The config file is used to determine the location of body parts and the doors they open up.  
 <br>
 ![Map Key](map-modding-key.png)
+<br>
+In the config file, you need to mark the location of a body part with: <br>
+- H = Head
+- A = Arm
+- C = Chest
+- L = Legs <br>  
+
+After each body part you should list the doors which you wish to be triggered (made to dissapear) after collection of the body part.
+![Map Guide](map-modding-config-guide.png)
