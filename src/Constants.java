@@ -35,8 +35,8 @@ public class Constants {
         return i * blockSize;
     }
 
-    public static void offsetControl(int x, int y){
-        Constants.controlPosition.add(x * blockSize, y * blockSize);
+    public static void offsetControl(){
+        Constants.controlPosition = new Vector2D((width/3), (height/8));
     }
 
     public static void loadSettings() {
