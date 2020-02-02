@@ -20,8 +20,14 @@ public class Constants {
     public static final int DELAY = 20;  // in milliseconds
     public static final double DT = DELAY / 1000.0;  // in seconds
 
+    public static boolean backMusic = true;
+
     public static int translate(int i){
         return i * blockSize;
+    }
+
+    public static void offsetControl(int x, int y){
+        Constants.controlPosition.add(x * blockSize, y * blockSize);
     }
 
     public static void loadSettings() {

@@ -1,3 +1,6 @@
+import Resources.Keys;
+import Resources.MyWindow;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -18,6 +21,7 @@ public class Game {
         objects = new ArrayList<>();
         TEMPobjects = new ArrayList<>();
         ctrl = new Keys();
+        Constants.offsetControl(4,1);
         CONTROL = new controlBlock(ctrl);
         objects.add(CONTROL);
         //objects.add(new WallObject(1,1));
@@ -198,6 +202,7 @@ public class Game {
         MyWindow win = new MyWindow(v);
 
         win.addKeyListener(g.ctrl);
+        SoundManager.playBackgroundMusic();
         while (true){
             g.update();
             v.repaint();

@@ -1,3 +1,4 @@
+import Resources.Action;
 import Resources.Vector2D;
 
 import java.awt.*;
@@ -63,24 +64,26 @@ public class Player extends GameObject {
                 double Xvar = ((position.x - radius) - (other.position.x + other.radius));
 
                 if (Yvar > -80) {
-
                     control.stopDown();
                     Action.downAllowed = false;
+                    Action.down = false;
                 }
                 if (Yvar < -100) {
                     control.stopUp();
                     Action.upAllowed = false;
+                    Action.up = false;
                 }
 
                 if (Xvar > -80) {
                     control.stopRight();
                     Action.rightAllowed = false;
-
+                    Action.right = false;
                 }
 
                 if (Xvar < -100) {
                     control.stopLeft();
                     Action.leftAllowed = false;
+                    Action.left = false;
                 }
             }
             else if (!this.overlap(other) && this.resetOverlap(other)) {

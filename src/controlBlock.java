@@ -1,3 +1,5 @@
+import Resources.Action;
+import Resources.Controller;
 import Resources.Vector2D;
 
 import java.awt.*;
