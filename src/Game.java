@@ -214,7 +214,15 @@ public class Game {
         TEMPobjects.addAll(objects);
         objects.clear();
         bigBlackSquare back = new bigBlackSquare();
+        MenuButton Start = new MenuButton(Constants.width / 2,  Constants.height / 2 - 100, "Start");
+        MenuButton Settings = new MenuButton(Constants.width / 2,  Constants.height / 2, "Settings");
+        MenuButton Help = new MenuButton(Constants.width / 2,  Constants.height / 2 + 100, "Help");
+        MenuButton Exit = new MenuButton(Constants.width / 2,  Constants.height / 2 + 200, "Exit");
         objects.add(back);
+        objects.add(Start);
+        objects.add(Settings);
+        objects.add(Help);
+        objects.add(Exit);
 
         while (pause.equals("mm")){
             v.repaint();
@@ -222,9 +230,9 @@ public class Game {
     }
 
     public void update(){
-        /*if (pause.equals("mm")){
+        if (pause.equals("mm")){
             genMainMenu();
-        }*/
+        }
 
 
         int skipAmount = 0;
