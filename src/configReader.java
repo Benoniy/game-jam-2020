@@ -66,7 +66,7 @@ public class configReader {
                     doorList = legDoors;
                     // Get coordinates of Legs
                     ArrayList<Integer> coords = getCoords(line);
-                    objects.add(new ArmObject(coords.get(0), coords.get(1)));
+                    objects.add(new LegsObject(coords.get(0), coords.get(1)));
                 } else if (line.charAt(0) == 'D') {
                     // Get coords of door piece (normal ways)
                     ArrayList<Integer> coords = getCoords(line);
