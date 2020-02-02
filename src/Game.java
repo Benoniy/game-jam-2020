@@ -285,7 +285,23 @@ public class Game {
         diaObjects.clear();
     }
 
+    public void genEnd(){
+
+        TEMPobjects.addAll(Constants.objects);
+        Constants.objects.clear();
+        bigBlackSquare back = new bigBlackSquare();
+        Constants.objects.add(back);
+
+        while (Constants.pause.equals("e")){
+            v.repaint();
+        }
+    }
+
     public void update(){
+        if (Constants.pause.equals("e")){
+            genEnd();
+        }
+
         if (Constants.pause.equals("mm")){
             genMainMenu();
             Constants.objects.clear();
