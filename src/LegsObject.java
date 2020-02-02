@@ -1,9 +1,13 @@
 import java.awt.*;
 import java.awt.geom.AffineTransform;
+import java.util.ArrayList;
 
 public class LegsObject extends EnviroObject {
-    public LegsObject(int posX, int posY) {
+    ArrayList legDoors;
+
+    public LegsObject(int posX, int posY, ArrayList legDoors) {
         super(posX, posY, Constants.blockRadius, true, Sprites.legs, 0);
+        this.legDoors = legDoors;
         System.out.println(position);
         isInteractable = true;
     }

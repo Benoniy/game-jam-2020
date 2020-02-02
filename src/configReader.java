@@ -51,7 +51,7 @@ public class configReader {
                     // Get coordinates of Chest & Related Door pieces
                     doorList = chestDoors;
                     ArrayList<Integer> coords = getCoords(line);
-                    objects.add(new ChestObject(coords.get(0), coords.get(1)));
+                    objects.add(new ChestObject(coords.get(0), coords.get(1), chestDoors));
                 } else if (line.charAt(0) == 'A') {
                     doorList = armDoors;
                     // Get coordinates of Chest
@@ -61,12 +61,12 @@ public class configReader {
                     doorList = headDoors;
                     // Get coordinates of Head
                     ArrayList<Integer> coords = getCoords(line);
-                    objects.add(new HeadObject(coords.get(0), coords.get(1)));
+                    objects.add(new HeadObject(coords.get(0), coords.get(1), headDoors));
                 } else if (line.charAt(0) == 'L') {
                     doorList = legDoors;
                     // Get coordinates of Legs
                     ArrayList<Integer> coords = getCoords(line);
-                    objects.add(new LegsObject(coords.get(0), coords.get(1)));
+                    objects.add(new LegsObject(coords.get(0), coords.get(1), legDoors));
                 } else if (line.charAt(0) == 'D') {
                     // Get coords of door piece (normal ways)
                     ArrayList<Integer> coords = getCoords(line);

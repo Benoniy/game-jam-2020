@@ -1,9 +1,13 @@
 import java.awt.*;
 import java.awt.geom.AffineTransform;
+import java.util.ArrayList;
 
 public class HeadObject extends EnviroObject {
-    public HeadObject(int posX, int posY) {
+    ArrayList headDoors;
+
+    public HeadObject(int posX, int posY, ArrayList headDoors) {
         super(posX, posY, Constants.blockRadius, true, Sprites.head, 0);
+        this.headDoors = headDoors;
         System.out.println(position);
         isInteractable = true;
     }

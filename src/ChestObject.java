@@ -1,9 +1,13 @@
 import java.awt.*;
 import java.awt.geom.AffineTransform;
+import java.util.ArrayList;
 
 public class ChestObject extends EnviroObject {
-    public ChestObject(int posX, int posY) {
+    ArrayList chestDoors;
+
+    public ChestObject(int posX, int posY, ArrayList chestDoors) {
         super(posX, posY, Constants.blockRadius, true, Sprites.chest, 0);
+        this.chestDoors = chestDoors;
         System.out.println(position);
         isInteractable = true;
     }
